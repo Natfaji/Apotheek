@@ -60,7 +60,6 @@ li a,
 }
 
 .active {
-    /* background-color: gray; */
     color: white;
 }
 
@@ -88,7 +87,6 @@ li a:hover,
 }
 
 .dropdown-content a:hover {
-    /* background-color: gray; */
     color: white;
 }
 
@@ -202,9 +200,7 @@ img {
 }
 
 .active,
-.dot:hover {
-    /* background-color: #717171; */
-}
+.dot:hover {}
 
 
 /* Fading animation */
