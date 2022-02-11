@@ -1,7 +1,6 @@
 // Get the container element
 window.addEventListener('load', function() {
     var btnContainer = document.getElementById("btnContainer");
-    console.log(btnContainer);
 
     // Get all buttons with class="btn" inside the container
     var btns = btnContainer.getElementsByClassName("btn");

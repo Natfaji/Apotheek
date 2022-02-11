@@ -1,5 +1,5 @@
 :root {
-    --color-1: rgba(251, 43, 43, 0.25);
+    --Nav-Text-Color: rgb(100, 110, 250);
     --color-2: #00ff00;
     --color-3: #000000cc;
     --color-4: #000000cc;
@@ -9,12 +9,12 @@
 
 body {
     margin: 0;
-    background: red;
 }
 
 nav {
     font-family: Verdana, sans-serif;
     background-color: var(--color-1);
+    border-bottom: 10px solid darkblue;
 }
 
 ul {
@@ -37,6 +37,7 @@ ul {
 
 li {
     float: left;
+    padding: 10px 20px;
 }
 
 li a,
@@ -45,29 +46,53 @@ li a,
     color: black;
     font-size: 20px;
     text-align: center;
-    padding: 10px 20px;
     text-decoration: none;
     position: relative;
 }
 
-.active::before {
+#btnContainer .active::before {
     content: "";
     height: 2px;
     width: 100%;
     position: absolute;
     bottom: -3px;
     left: 0;
-    background-color: red;
+    background-color: var(--Nav-Text-Color);
 }
 
-.active {
-    background-color: gray;
-    color: white;
+li .btn:not(.active)::before {
+    content: "";
+    height: 2px;
+    width: 0%;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: var(--Nav-Text-Color);
+    transition: width 0.25s ease-in-out;
 }
 
-li a:hover,
+li .btn:not(.active):hover::before {
+    width: 100%;
+    transition: width 0.25s ease-in-out;
+}
+
+#btnContainer .active::before {
+    content: "";
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--Nav-Text-Color);
+}
+
+#btnContainer .active {
+    color: var(--Nav-Text-Color);
+}
+
+li:hover,
 .dropdown:hover .dropbtn {
-    background-color: orange;
     color: blue;
 }
 
@@ -77,6 +102,7 @@ li a:hover,
     background-color: lightblue;
     min-width: 160px;
     box-shadow: 5px 8px 10px 0px black;
+    margin: 10px;
     z-index: 1;
 }
 
@@ -99,11 +125,6 @@ li a:hover,
 
 
 /* --------------------------------------------------------------------------- */
-
-
-/* * {
-    box-sizing: border-box
-} */
 
 main {
     margin-top: 25px;
@@ -202,7 +223,7 @@ img {
     transition: background-color 0.6s ease;
 }
 
-.active,
+.Dots .active,
 .dot:hover {
     background-color: #717171;
 }
