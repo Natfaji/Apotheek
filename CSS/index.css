@@ -126,13 +126,13 @@ li:hover,
 
 /* --------------------------------------------------------------------------- */
 
-main {
-    margin-top: 25px;
+section {
+    margin-block: 30px;
 }
 
 .mySlides {
     display: none;
-    aspect-ratio: 3/1;
+    aspect-ratio: 4/1;
 }
 
 img {
@@ -257,12 +257,25 @@ img {
 }
 
 
-/* On smaller screens, decrease text size */
+/* --------------------------------------------------------------------------- */
 
-@media only screen and (max-width: 300px) {
-    .prev,
-    .next,
-    .text {
-        font-size: 11px
-    }
+.NieuwsTitle {
+    margin: 30px;
+    font-family: fantasy;
+    font-size: 25px;
 }
+
+#Nieuws {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Nieuws {
+    background-color: red;
+    height: 200px;
+    flex-grow: 1;
+    margin-inline: 1%;
+}
+
+
+/* --------------------------------------------------------------------------- */
