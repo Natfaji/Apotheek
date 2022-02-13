@@ -1,10 +1,7 @@
 :root {
-    --Nav-Text-Color: rgb(100, 110, 250);
-    --color-2: #00ff00;
-    --color-3: #000000cc;
-    --color-4: #000000cc;
-    --color-5: #000000cc;
-    --color-6: #000000cc;
+    --Nav-Text-Color: #0000ff;
+    --Theme-1: #0000ff;
+    --color-3: rgb(100, 110, 250);
 }
 
 body {
@@ -14,7 +11,7 @@ body {
 nav {
     font-family: Verdana, sans-serif;
     background-color: var(--color-1);
-    border-bottom: 10px solid darkblue;
+    border-bottom: 10px solid var(--Theme-1);
 }
 
 ul {
@@ -127,7 +124,7 @@ li:hover,
 /* --------------------------------------------------------------------------- */
 
 section {
-    margin-block: 30px;
+    margin-block: 50px;
 }
 
 .mySlides {
@@ -161,7 +158,7 @@ img {
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: white;
+    color: var(--Theme-1);
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -225,7 +222,7 @@ img {
 
 .Dots .active,
 .dot:hover {
-    background-color: #717171;
+    background-color: var(--Theme-1);
 }
 
 
@@ -271,10 +268,67 @@ img {
 }
 
 .Nieuws {
-    background-color: red;
+    background-color: var(--Theme-1);
     height: 200px;
     flex-grow: 1;
     margin-inline: 1%;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+.OnzeServicesTitle {
+    margin: 30px;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+#OnzeServices {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.OnzeServices {
+    background-color: var(--Theme-1);
+    height: 200px;
+    flex-grow: 1;
+    margin-inline: 1%;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+.OpeningstijdenTitle {
+    margin: 30px;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+#Openingstijden {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Openingstijden_1 {
+    background-color: var(--Theme-1);
+    height: 200px;
+    flex-grow: 1;
+    margin-inline: 1%;
+}
+
+.Openingstijden_2 {
+    background-color: var(--Theme-1);
+    height: 200px;
+    flex-grow: 2;
+    margin-inline: 1%;
+}
+
+#map {
+    display: block;
+    margin-top: 50px;
+    width: 90%;
+    height: 450px;
+    margin-inline: auto;
 }
 
 

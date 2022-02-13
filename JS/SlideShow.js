@@ -1,7 +1,7 @@
 var slideIndex = 1;
 window.addEventListener('load', function() {
     showSlides(slideIndex);
-    automateSlides()
+    // automateSlides()
 })
 
 function plusSlides(n) {
@@ -29,12 +29,12 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-function automateSlides() {
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(function() {
-        showSlides();
-        automateSlides();
-    }, 2000);
-    console.log(11111);
-}
+// function automateSlides() {
+//     if (slideIndex > slides.length) { slideIndex = 1 }
+//     slides[slideIndex - 1].style.display = "block";
+//     setTimeout(function() {
+//         showSlides();
+//         automateSlides();
+//     }, 2000);
+//     console.log(11111);
+// }
