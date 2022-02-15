@@ -1,0 +1,75 @@
+.Services_1_Title {
+    margin: 30px;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+#Services {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Services_1 {
+    background-color: var(--Theme-1);
+    height: 200px;
+    flex-grow: 1;
+    margin-inline: 1%;
+}
+
+.Services_2 {
+    background-color: var(--Theme-1);
+    height: 200px;
+    flex-grow: 2;
+    margin-inline: 1%;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+.OnzeServicesTitle {
+    margin: 30px;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+#OnzeServices {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.OnzeServices {
+    background-color: var(--Theme-1);
+    height: 200px;
+    flex-grow: 1;
+    margin-inline: 1%;
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+.OpeningstijdenTitle {
+    margin: 30px;
+    font-family: fantasy;
+    font-size: 25px;
+}
+
+#Openingstijden {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Openingstijden {
+    background-color: var(--Theme-1);
+    height: 200px;
+    flex-grow: 1;
+    margin-inline: 1%;
+    width: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* --------------------------------------------------------------------------- */

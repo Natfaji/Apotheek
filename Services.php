@@ -5,10 +5,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Home</title>
+	<title>Services</title>
 	<link rel="icon" type="image/png" href="Assets/LOGO/LOGO.png" />
 	<link rel="stylesheet" href="CSS/All.css">
-	<link rel="stylesheet" href="CSS/index.css">
+	<link rel="stylesheet" href="CSS/Services.css">
 	<script src="JS/SlideShow.js"></script>
 	<script src="JS/ActiveNav.js"></script>
 </head>
@@ -24,22 +24,19 @@
 			<?php include 'PHP/SlideShow.php' ?>
 		</section>
 		<!-- Slide show -->
-		<!-- Nieuws -->
+		<!-- Services -->
 		<section>
-			<div class="NieuwsTitle">Nieuws</div>
-			<div id="Nieuws">
-				<div class="Nieuws">
-
+			<div class="Services_1_Title">Service 1</div>
+			<div id="Services">
+				<div class="Services_1">
+					<img src="" alt="">
 				</div>
-				<div class="Nieuws">
-
-				</div>
-				<div class="Nieuws">
+				<div class="Services_2">
 
 				</div>
 			</div>
 		</section>
-		<!-- Nieuws -->
+		<!-- Services -->
 		<!-- Onze services -->
 		<section>
 			<div class="OnzeServicesTitle">Onze Services</div>
