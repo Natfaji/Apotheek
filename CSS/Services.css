@@ -4,21 +4,20 @@
     font-size: 25px;
 }
 
-#Services {
+#Services_1 {
     display: flex;
     justify-content: space-evenly;
 }
 
-.Services_1 {
+.Services_1_img {
     background-color: var(--Theme-1);
-    height: 200px;
+    aspect-ratio: 2/1;
     flex-grow: 1;
     margin-inline: 1%;
 }
 
-.Services_2 {
+.Services_1_txt {
     background-color: var(--Theme-1);
-    height: 200px;
     flex-grow: 2;
     margin-inline: 1%;
 }
@@ -26,21 +25,27 @@
 
 /* --------------------------------------------------------------------------- */
 
-.OnzeServicesTitle {
+.Services_2_Title {
     margin: 30px;
     font-family: fantasy;
     font-size: 25px;
 }
 
-#OnzeServices {
+#Services_2 {
     display: flex;
     justify-content: space-evenly;
 }
 
-.OnzeServices {
+.Services_2_img {
     background-color: var(--Theme-1);
-    height: 200px;
+    aspect-ratio: 2/1;
     flex-grow: 1;
+    margin-inline: 1%;
+}
+
+.Services_2_txt {
+    background-color: var(--Theme-1);
+    flex-grow: 2;
     margin-inline: 1%;
 }
 

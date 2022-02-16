@@ -27,11 +27,11 @@
 		<!-- Services -->
 		<section>
 			<div class="Services_1_Title">Service 1</div>
-			<div id="Services">
-				<div class="Services_1">
+			<div id="Services_1">
+				<div class="Services_1_img">
 					<img src="" alt="">
 				</div>
-				<div class="Services_2">
+				<div class="Services_1_txt">
 
 				</div>
 			</div>
@@ -39,16 +39,13 @@
 		<!-- Services -->
 		<!-- Onze services -->
 		<section>
-			<div class="OnzeServicesTitle">Onze Services</div>
-			<div id="OnzeServices">
-				<div class="OnzeServices">
+			<div class="Services_2_Title">Service 1</div>
+			<div id="Services_2">
+				<div class="Services_2_txt">
 
 				</div>
-				<div class="OnzeServices">
-
-				</div>
-				<div class="OnzeServices">
-
+				<div class="Services_2_img">
+					<img src="" alt="">
 				</div>
 			</div>
 		</section>
