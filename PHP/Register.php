@@ -18,7 +18,7 @@ if (
     empty($password) ||
     empty($password_confirm)
 ) {
-    $_SESSION['messages'][] = 'Please fill all required fields!';
+    $_SESSION['messages'][] = 'Please fill all required fields!'.openssl_random_pseudo_bytes(1, $cstrong);
     header('Location: ../MijnApo.php');
     exit;
 }
@@ -48,7 +48,7 @@ $namecheck = mysqli_query($conn, $namecheckquery);
 $result = mysqli_num_rows($namecheck);
 
 if ($result) {
-    $_SESSION['messages'][] = 'email used'.$result;
+    $_SESSION['messages'][] = 'email used';
     header('Location: ../MijnApo.php');
     exit;
 }
@@ -59,12 +59,15 @@ if (!$result) {
     exit;
 }
 
-/*
-if (mysqli_num_rows($namecheck) > 0) {
-    echo "3: Name already exists"; //error code #3 - name already exists
-    exit();
-}
 
+$randomSalt = "abcdef";
+
+$preSalt = substr($randomSalt, 0,3); // abc
+$postSalt = substr($randomSalt, 3,3);  // def
+
+$password = md5(md5($preSalt.$teacherpassword.$postSalt));
+
+/*
 //add user to the table
 $salt = "\$5\$rounds=5000\$" . "fuck" . $username . "\$";
 $hash = crypt($password, $salt);
