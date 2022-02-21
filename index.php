@@ -9,6 +9,7 @@
 	<link rel="icon" type="image/png" href="Assets/LOGO/LOGO.png" />
 	<link rel="stylesheet" href="CSS/All.css">
 	<link rel="stylesheet" href="CSS/index.css">
+	<?php include 'PHP/db_connection.php'; ?>
 	<script src="JS/SlideShow.js"></script>
 	<script src="JS/ActiveNav.js"></script>
 </head>
