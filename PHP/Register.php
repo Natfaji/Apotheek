@@ -18,7 +18,7 @@ if (
     empty($password) ||
     empty($password_confirm)
 ) {
-    $_SESSION['messages'][] = 'Please fill all required fields!'.openssl_random_pseudo_bytes(1, $cstrong);
+    $_SESSION['messages'][] = ["warning", 'Please fill all required fields!'];
     header('Location: ../MijnApo.php');
     exit;
 }
@@ -29,15 +29,15 @@ $lowercase = preg_match('@[a-z]@', $password);
 $number    = preg_match('@[0-9]@', $password);
 $specialChars = preg_match('@[^\w]@', $password);
 
-if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
-    $_SESSION['messages'][] = 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.';
+if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
+    $_SESSION['messages'][] = ["warning", 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.'];
     header('Location: ../MijnApo.php');
     exit;
 }
 
 //check if passwords match
 if ($password !== $password_confirm) {
-    $_SESSION['messages'][] = 'Password and Confirm password should match!';
+    $_SESSION['messages'][] = ["warning", 'Password and Confirm password should match!'];
     header('Location: ../MijnApo.php');
     exit;
 }
@@ -47,32 +47,13 @@ $namecheckquery = "SELECT email FROM users WHERE email = '$email'";
 $namecheck = mysqli_query($conn, $namecheckquery);
 $result = mysqli_num_rows($namecheck);
 
-if ($result) {
-    $_SESSION['messages'][] = 'email used';
-    header('Location: ../MijnApo.php');
-    exit;
-}
-
 if (!$result) {
-    $_SESSION['messages'][] = 'email not used';
+    $hash = password_hash($password, PASSWORD_BCRYPT, ['cost' => 10]);
+    mysqli_query($conn, "INSERT INTO users VALUES (
+        '','$firstname','$infixes','$lastname','$email','$hash','',current_timestamp(),''
+        )");
+} else {
+    $_SESSION['messages'][] = ["warning", 'email used'];
     header('Location: ../MijnApo.php');
     exit;
 }
-
-
-$randomSalt = "abcdef";
-
-$preSalt = substr($randomSalt, 0,3); // abc
-$postSalt = substr($randomSalt, 3,3);  // def
-
-$password = md5(md5($preSalt.$teacherpassword.$postSalt));
-
-/*
-//add user to the table
-$salt = "\$5\$rounds=5000\$" . "fuck" . $username . "\$";
-$hash = crypt($password, $salt);
-$insertuserquery = "INSERT INTO user_credentials (User_Name, hash, salt) VALUES ('" . $username . "', '" . $hash . "', '" . $salt . "');";
-mysqli_query($con, $insertuserquery) or die("4: Insert player query failed"); //error code #4 - insert query failed
-
-echo ("0");
-*/
