@@ -7,7 +7,9 @@ if (isset($_POST["submit"])) {
     //connect to functions.php
     require_once 'functions.php';
 
-    session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
 
     //get user data from form
     $email = $_POST['email'];
@@ -18,7 +20,7 @@ if (isset($_POST["submit"])) {
         empty($password)
     ) {
         $_SESSION['messages'][] = ["warning", 'Please fill all required fields!'];
-        header('Location: ../MijnApo.php');
+        header('Location: ../LoginPage.php');
         exit;
     }
 

@@ -1,6 +1,8 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 session_unset();
-$_SESSION['messages'][] = ["succes", 'you have successfully logged out!'];
+$_SESSION['messages'][] = ["success", 'you have successfully logged out!'];
 header('Location: ../MijnApo.php');
 exit;

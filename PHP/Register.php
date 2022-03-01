@@ -7,7 +7,9 @@ if (isset($_POST["submit"])) {
     //connect to functions.php
     require_once 'functions.php';
 
-    session_start();
+    if (!isset($_SESSION)) {
+        session_start();
+    }
 
     //get user data from form
     $firstname = $_POST['firstname'];
@@ -26,7 +28,7 @@ if (isset($_POST["submit"])) {
         empty($password_confirm)
     ) {
         $_SESSION['messages'][] = ["warning", 'Please fill all required fields!'];
-        header('Location: ../MijnApo.php');
+        header('Location: ../LoginPage.php');
         exit;
     }
 
@@ -39,21 +41,21 @@ if (isset($_POST["submit"])) {
     // Validate password strength
     if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
         $_SESSION['messages'][] = ["warning", 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.'];
-        header('Location: ../MijnApo.php');
+        header('Location: ../LoginPage.php');
         exit;
     }
 
     //check if passwords match
     if ($password !== $password_confirm) {
         $_SESSION['messages'][] = ["warning", 'Password and Confirm password should match!'];
-        header('Location: ../MijnApo.php');
+        header('Location: ../LoginPage.php');
         exit;
     }
 
     if (uidExists($conn, $email) !== false) {
         //email is already in use
         $_SESSION['messages'][] = ["warning", 'email used'];
-        header('Location: ../MijnApo.php');
+        header('Location: ../LoginPage.php');
         exit;
     }
 

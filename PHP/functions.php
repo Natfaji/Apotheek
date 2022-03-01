@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 //check if email already exist in database
 function uidExists($conn, $email)
@@ -10,7 +12,7 @@ function uidExists($conn, $email)
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         $_SESSION['messages'][] = ["error", 'Error unkown #001'];
-        header('Location: ../MijnApo.php');
+        header('Location: ../LoginPage.php');
         exit;
     }
 
@@ -36,7 +38,7 @@ function createuser($conn, $firstname, $infixes, $lastname, $email, $password)
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         $_SESSION['messages'][] = ["error", 'Error unkown #002'];
-        header('Location: ../MijnApo.php');
+        header('Location: ../LoginPage.php');
         exit;
     }
 
@@ -47,7 +49,7 @@ function createuser($conn, $firstname, $infixes, $lastname, $email, $password)
     mysqli_stmt_close($stmt);
 
     $_SESSION['messages'][] = ["success", 'you have successfully sign up!'];
-    header('Location: ../MijnApo.php');
+    header('Location: ../LoginPage.php');
     exit;
 }
 
@@ -57,7 +59,7 @@ function loginUser($conn, $email, $password)
 
     if ($uidExists === false) {
         $_SESSION['messages'][] = ["warning", 'Wrong Email or Password!'];
-        header('Location: ../MijnApo.php');
+        header('Location: ../LoginPage.php');
         exit;
     }
 
@@ -66,7 +68,7 @@ function loginUser($conn, $email, $password)
 
     if ($checkpwd === false) {
         $_SESSION['messages'][] = ["warning", 'Wrong Email or Password!'];
-        header('Location: ../MijnApo.php');
+        header('Location: ../LoginPage.php');
         exit;
     } else if ($checkpwd === true) {
         $_SESSION['UId'] = $uidExists["id"];
@@ -78,9 +80,14 @@ function loginUser($conn, $email, $password)
         $_SESSION['date_created'] = $uidExists["date_created"];
         $_SESSION['status'] = $uidExists["status"];
 
-
-        $_SESSION['messages'][] = ["success", 'you have successfully logged in'];
-        header('Location: ../MijnApo.php');
-        exit;
+        if (!$_SESSION['user_level'] == 1) {
+            $_SESSION['messages'][] = ["success", 'you have successfully logged in'];
+            header('Location: ../MijnApo.php');
+            exit;
+        } else {
+            $_SESSION['messages'][] = ["success", 'you have successfully logged in'];
+            header('Location: ../AdminPage.php');
+            exit;
+        }
     }
 }

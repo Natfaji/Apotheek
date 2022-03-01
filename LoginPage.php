@@ -8,7 +8,7 @@
 	<title>Login</title>
 	<link rel="icon" type="image/png" href="Assets/LOGO/LOGO.png" />
 	<link rel="stylesheet" href="CSS/All.css">
-	<link rel="stylesheet" href="CSS/MijnApo.css">
+	<link rel="stylesheet" href="CSS/LoginPage.css">
 	<script src="JS/ActiveNav.js"></script>
 </head>
 
@@ -18,37 +18,36 @@
 	</Header>
 
 	<main>
-		<!-- Register -->
 		<section>
 			<?php require_once 'PHP/messages.php' ?>
-			<form name="Register" action="PHP/Register.php" method="post" required>
-				firstname: <input type="text" name="firstname">
-				<br>
-				infixes: <input type="text" name="infixes">
-				<br>
-				lastname: <input type="text" name="lastname">
-				<br>
-				Email: <input type="email" name="email">
-				<br>
-				Password: <input type="password" name="password">
-				<br>
-				Confirm password: <input type="password" name="password_confirm">
-				<br>
-				<input type="submit" name="submit" value="Register">
-			</form>
+		</section>
+
+		<!-- Login -->
+		<section id="account">
+			<div id="Login">
+				<h2>Login</h2>
+				<form name="Login" action="PHP/Login.php" method="post" required>
+					<input type="email" name="email" placeholder="Email">
+					<input type="password" name="password" placeholder="Password">
+					<input type="submit" name="submit" value="Login">
+				</form>
+			</div>
+			<!-- Login -->
+			<!-- Register -->
+			<div id="SignUp">
+				<h2>Sign Up</h2>
+				<form name="Register" action="PHP/Register.php" method="post" required>
+					<input type="text" name="firstname" placeholder="firstname">
+					<input type="text" name="infixes" placeholder="infixes">
+					<input type="text" name="lastname" placeholder="lastname">
+					<input type="email" name="email" placeholder="Email">
+					<input type="password" name="password" placeholder="Password">
+					<input type="password" name="password_confirm" placeholder="Confirm password">
+					<input type="submit" name="submit" value="Register">
+				</form>
+			</div>
 		</section>
 		<!-- Register -->
-		<!-- Login -->
-		<section>
-			<form name="Login" action="PHP/Login.php" method="post" required>
-				Email: <input type="email" name="email">
-				<br>
-				Password: <input type="password" name="password">
-				<br>
-				<input type="submit" name="submit" value="Login">
-			</form>
-		</section>
-		<!-- Login -->
 	</main>
 </body>
 

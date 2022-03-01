@@ -1,5 +1,7 @@
 <?php
-session_start()
+if (!isset($_SESSION)) {
+	session_start();
+}
 ?>
 
 <nav>
@@ -14,7 +16,7 @@ session_start()
 		<?php if (isset($_SESSION['first_name'])) {
 			echo
 			"<li class='dropdown'>
-				<a href='MijnApo.php' class='dropbtn'>Mijn APO ($_SESSION[first_name])</a>
+				<a href='MijnApo.php' class='dropbtn'>Mijn APO ($_SESSION[first_name] $_SESSION[user_level])</a>
 				<div class='dropdown-content'>
 					<a href='#'>winkelwagen</a>
 					<a href='#'>bestellingen</a>

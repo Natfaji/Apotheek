@@ -8,6 +8,10 @@ body {
     margin: 0;
 }
 
+* {
+    box-sizing: border-box
+}
+
 
 /* Nav Bar Start*/
 
@@ -127,6 +131,35 @@ li:hover,
 
 /* Nav Bar End*/
 
+
+/* Error Container Start*/
+
+.errorContainer {
+    display: flex;
+    align-items: center;
+    margin-inline: auto;
+    margin-bottom: 25px;
+    padding: 10px;
+    width: 75%;
+    background-color: pink;
+    border-style: solid;
+    border-width: 0px 0px 0px 15px;
+    border-color: red;
+}
+
+.errorContainer svg {
+    margin-right: 10px;
+}
+
+
+/* Error Container End*/
+
+
+/* Section Start*/
+
 section {
     margin-block: 50px;
 }
+
+
+/* Section End*/
