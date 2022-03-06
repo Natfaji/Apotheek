@@ -1,3 +1,4 @@
+<?php $page = 'Home' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,20 +10,20 @@
 	<link rel="icon" type="image/png" href="Assets/LOGO/LOGO.png" />
 	<link rel="stylesheet" href="CSS/All.css">
 	<link rel="stylesheet" href="CSS/index.css">
-	<?php include 'PHP/db_connection.php'; ?>
+	<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/db_connection.php'; ?>
 	<script src="JS/SlideShow.js"></script>
 	<script src="JS/ActiveNav.js"></script>
 </head>
 
 <body>
 	<header>
-		<?php include 'PHP/Header.php' ?>
+		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/Header.php' ?>
 	</Header>
 
 	<main>
 		<!-- Slide show -->
 		<section>
-			<?php include 'PHP/SlideShow.php' ?>
+			<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/SlideShow.php' ?>
 		</section>
 		<!-- Slide show -->
 		<!-- Nieuws -->

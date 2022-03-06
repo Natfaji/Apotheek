@@ -1,12 +1,13 @@
 <?php
 session_start();
 if (!isset($_SESSION['first_name'])) {
-	header('Location: ../LoginPage.php');
+	header('Location: ../LoginPage');
 } else {
 	if ($_SESSION['user_level'] === 1) {
-		header('Location: ../AdminPage.php');
+		header('Location: ../AdminPage');
 	}
 }
+$page = 'MijnApo'
 ?>
 
 <!DOCTYPE html>
@@ -25,13 +26,13 @@ if (!isset($_SESSION['first_name'])) {
 
 <body>
 	<header>
-		<?php include 'PHP/Header.php' ?>
+		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/Header.php' ?>
 	</Header>
 
 	<main>
 		<!-- Register -->
 		<section>
-			<?php require_once 'PHP/messages.php' ?>
+			<?php require_once $_SERVER["DOCUMENT_ROOT"].'/PHP/messages.php' ?>
 
 		</section>
 		<!-- Register -->

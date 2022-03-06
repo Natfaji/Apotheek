@@ -4,29 +4,30 @@ if (!isset($_SESSION)) {
 }
 ?>
 
-<nav>
+<nav class="HeaderNavigation">
 	<ul id='btnContainer'>
 		<li class='LOGO_li'>
-			<a href='/'><img src='Assets/LOGO/LOGO.png' alt='LOGO' class='LOGO'></a>
+			<a href='/'><img src='/Assets/LOGO/LOGO.png' alt='LOGO' class='LOGO'></a>
 		</li>
-		<li><a class='btn active' href='index.php'>Home</a></li>
-		<li><a class='btn' href='Services.php'>Services</a></li>
-		<li><a class='btn' href='medicijnen.php'>medicijnen</a></li>
-		<li><a class='btn' href='#'>Voorlichting</a></li>
+		<li><a class='nav-item btn <?php if($page=='Home'){echo 'active';}?>' href='/'>Home</a></li>
+		<li><a class='nav-item btn <?php if($page=='Services'){echo 'active';}?>' href='/Services'>Services</a></li>
+		<li><a class='nav-item btn <?php if($page=='medicijnen'){echo 'active';}?>' href='/medicijnen'>medicijnen</a></li>
+		<li><a class='nav-item btn <?php if($page=='Voorlichting'){echo 'active';}?>' href='/Voorlichting'>Voorlichting</a></li>
 		<?php if (isset($_SESSION['first_name'])) {
 			echo
 			"<li class='dropdown'>
-				<a href='MijnApo.php' class='dropbtn'>Mijn APO ($_SESSION[first_name] $_SESSION[user_level])</a>
+				<a href='/MijnApo' class='dropbtn'>Mijn APO ($_SESSION[first_name] $_SESSION[user_level])</a>
 				<div class='dropdown-content'>
 					<a href='#'>winkelwagen</a>
 					<a href='#'>bestellingen</a>
 					<a href='#'>Account</a>
-					<a href='PHP/Logout.php'>Uitloggen</a>
+					<a href='/PHP/Logout'>Uitloggen</a>
 				</div>
 			</li>";
 		} else {
+			if($page=='LoginPage'){$active = 'active';} else {$active='';}
 			echo
-			"<a href='MijnApo.php' class='dropbtn'>Mijn APO (inlog)</a>";
+			"<li><a href='/MijnApo' class='nav-item btn dropbtn $active'>Mijn APO (inlog)</a></li>";
 		}
 		?>
 

@@ -10,7 +10,7 @@
 }
 
 .Nieuws {
-    background-color: var(--Theme-1);
+    background-color: var(--background-color);
     height: 200px;
     flex-grow: 1;
     margin-inline: 1%;
@@ -31,7 +31,7 @@
 }
 
 .OnzeServices {
-    background-color: var(--Theme-1);
+    background-color: var(--background-color);
     height: 200px;
     flex-grow: 1;
     margin-inline: 1%;
@@ -52,7 +52,7 @@
 }
 
 .Openingstijden {
-    background-color: var(--Theme-1);
+    background-color: var(--background-color);
     height: 200px;
     flex-grow: 1;
     margin-inline: 1%;

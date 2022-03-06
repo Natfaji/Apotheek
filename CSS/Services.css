@@ -10,14 +10,14 @@
 }
 
 .Services_1_img {
-    background-color: var(--Theme-1);
+    background-color: var(--background-color);
     aspect-ratio: 2/1;
     flex-grow: 1;
     margin-inline: 1%;
 }
 
 .Services_1_txt {
-    background-color: var(--Theme-1);
+    background-color: var(--background-color);
     flex-grow: 2;
     margin-inline: 1%;
 }
@@ -37,14 +37,14 @@
 }
 
 .Services_2_img {
-    background-color: var(--Theme-1);
+    background-color: var(--background-color);
     aspect-ratio: 2/1;
     flex-grow: 1;
     margin-inline: 1%;
 }
 
 .Services_2_txt {
-    background-color: var(--Theme-1);
+    background-color: var(--background-color);
     flex-grow: 2;
     margin-inline: 1%;
 }
@@ -64,7 +64,7 @@
 }
 
 .Openingstijden {
-    background-color: var(--Theme-1);
+    background-color: var(--background-color);
     height: 200px;
     flex-grow: 1;
     margin-inline: 1%;

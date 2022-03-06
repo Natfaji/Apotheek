@@ -12,7 +12,7 @@ function uidExists($conn, $email)
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         $_SESSION['messages'][] = ["error", 'Error unkown #001'];
-        header('Location: ../LoginPage.php');
+        header('Location: ../LoginPage');
         exit;
     }
 
@@ -38,7 +38,7 @@ function createuser($conn, $firstname, $infixes, $lastname, $email, $password)
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         $_SESSION['messages'][] = ["error", 'Error unkown #002'];
-        header('Location: ../LoginPage.php');
+        header('Location: ../LoginPage');
         exit;
     }
 
@@ -49,7 +49,7 @@ function createuser($conn, $firstname, $infixes, $lastname, $email, $password)
     mysqli_stmt_close($stmt);
 
     $_SESSION['messages'][] = ["success", 'you have successfully sign up!'];
-    header('Location: ../LoginPage.php');
+    header('Location: ../LoginPage');
     exit;
 }
 
@@ -59,7 +59,7 @@ function loginUser($conn, $email, $password)
 
     if ($uidExists === false) {
         $_SESSION['messages'][] = ["warning", 'Wrong Email or Password!'];
-        header('Location: ../LoginPage.php');
+        header('Location: ../LoginPage');
         exit;
     }
 
@@ -68,7 +68,7 @@ function loginUser($conn, $email, $password)
 
     if ($checkpwd === false) {
         $_SESSION['messages'][] = ["warning", 'Wrong Email or Password!'];
-        header('Location: ../LoginPage.php');
+        header('Location: ../LoginPage');
         exit;
     } else if ($checkpwd === true) {
         $_SESSION['UId'] = $uidExists["id"];
@@ -82,11 +82,11 @@ function loginUser($conn, $email, $password)
 
         if (!$_SESSION['user_level'] == 1) {
             $_SESSION['messages'][] = ["success", 'you have successfully logged in'];
-            header('Location: ../MijnApo.php');
+            header('Location: ../MijnApo');
             exit;
         } else {
             $_SESSION['messages'][] = ["success", 'you have successfully logged in'];
-            header('Location: ../AdminPage.php');
+            header('Location: ../AdminPage');
             exit;
         }
     }

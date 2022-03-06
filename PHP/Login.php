@@ -2,10 +2,10 @@
 if (isset($_POST["submit"])) {
 
     //start database connection
-    require_once 'db_connection.php';
+    require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/db_connection.php';
 
     //connect to functions.php
-    require_once 'functions.php';
+    require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/functions.php';
 
     if (!isset($_SESSION)) {
         session_start();
@@ -20,7 +20,7 @@ if (isset($_POST["submit"])) {
         empty($password)
     ) {
         $_SESSION['messages'][] = ["warning", 'Please fill all required fields!'];
-        header('Location: ../LoginPage.php');
+        header('Location: ../LoginPage');
         exit;
     }
 
@@ -30,6 +30,6 @@ if (isset($_POST["submit"])) {
     //end database connection
     mysqli_close($conn);
 } else {
-    header("Location: ../MijnApo.php");
+    header("Location: ../MijnApo");
     exit;
 }
