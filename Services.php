@@ -16,13 +16,13 @@
 
 <body>
 	<header>
-		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/Header.php' ?>
+		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/Header.php' ?>
 	</Header>
 
 	<main>
 		<!-- Slide show -->
 		<section>
-			<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/SlideShow.php' ?>
+			<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/SlideShow.php' ?>
 		</section>
 		<!-- Slide show -->
 		<!-- Services -->

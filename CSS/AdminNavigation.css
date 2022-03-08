@@ -2,25 +2,21 @@ html {
     height: 100%;
 }
 
-body {
-    min-height: 100%;
-    margin: 0;
-}
-
 main {
     height: calc(100vh - 80px);
 }
 
 .AdminNavigation {
-    height: 100%;
-    overflow-y: auto;
     width: 200px;
+    height: 100%;
+    position: fixed;
+    overflow-y: auto;
     flex-basis: 300px;
-    background-color: var(--background-color);
     color: var(--color-light);
-    z-index: 10;
+    z-index: 1;
     display: flex;
     flex-direction: column;
+    background-color: var(--background-color);
 }
 
 .AdminNavigation .item {
@@ -53,4 +49,13 @@ main {
 
 .AdminNavigation .item.active::after {
     visibility: visible;
+}
+
+.page-content {
+    width: calc(100% - 200px);
+    height: 100%;
+    padding: 15px;
+    margin: 0 0 0 200px;
+    /* background-color: red; */
+    overflow-y: auto;
 }

@@ -1,4 +1,16 @@
-<?php $page = 'LoginPage' ?>
+<?php
+session_start();
+if (!isset($_SESSION['first_name'])) {
+} else {
+	if ($_SESSION['user_level'] === 0) {
+		header('Location: /MijnApo');
+	}
+	else{
+		header('Location: /AdminPage');
+	}
+}
+$page = 'LoginPage'
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,19 +28,19 @@
 
 <body>
 	<header>
-		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/Header.php' ?>
+		<?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Header.php' ?>
 	</Header>
 
 	<main>
 		<section>
-			<?php require_once $_SERVER["DOCUMENT_ROOT"].'/PHP/messages.php' ?>
+			<?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/messages.php' ?>
 		</section>
 
 		<!-- Login -->
 		<section id="account">
 			<div id="Login">
 				<h2>Login</h2>
-				<form name="Login" action="PHP/Login.php" method="post" required>
+				<form name="Login" action="/PHP/Login.php" method="post" required>
 					<input type="email" name="email" placeholder="Email">
 					<input id="Loginpassword" type="password" name="password" placeholder="Password">
 					<input type="submit" name="submit" value="Login">
@@ -38,7 +50,7 @@
 			<!-- Register -->
 			<div id="SignUp">
 				<h2>Sign Up</h2>
-				<form name="Register" action="PHP/Register.php" method="post" required>
+				<form name="Register" action="/PHP/Register.php" method="post" required>
 					<input type="text" name="firstname" placeholder="firstname *">
 					<input type="text" name="infixes" placeholder="infixes">
 					<input type="text" name="lastname" placeholder="lastname *">

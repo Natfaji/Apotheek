@@ -20,7 +20,7 @@ if (isset($_POST["submit"])) {
         empty($password)
     ) {
         $_SESSION['messages'][] = ["warning", 'Please fill all required fields!'];
-        header('Location: ../LoginPage');
+        header('Location: /LoginPage');
         exit;
     }
 
@@ -30,6 +30,6 @@ if (isset($_POST["submit"])) {
     //end database connection
     mysqli_close($conn);
 } else {
-    header("Location: ../MijnApo");
+    header("Location: /MijnApo");
     exit;
 }

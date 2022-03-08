@@ -10,20 +10,19 @@
 	<link rel="icon" type="image/png" href="Assets/LOGO/LOGO.png" />
 	<link rel="stylesheet" href="CSS/All.css">
 	<link rel="stylesheet" href="CSS/index.css">
-	<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/db_connection.php'; ?>
 	<script src="JS/SlideShow.js"></script>
 	<script src="JS/ActiveNav.js"></script>
 </head>
 
 <body>
 	<header>
-		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/Header.php' ?>
+		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/Header.php' ?>
 	</Header>
 
 	<main>
 		<!-- Slide show -->
 		<section>
-			<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/SlideShow.php' ?>
+			<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/SlideShow.php' ?>
 		</section>
 		<!-- Slide show -->
 		<!-- Nieuws -->

@@ -4,5 +4,5 @@ if (!isset($_SESSION)) {
 }
 session_unset();
 $_SESSION['messages'][] = ["success", 'you have successfully logged out!'];
-header('Location: ../MijnApo');
+header('Location: /MijnApo');
 exit;

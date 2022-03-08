@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
         empty($password)
     ) {
         $_SESSION['messages'][] = ["warning", 'Please fill all required fields!'];
-        header('Location: ../LoginPage');
+        header('Location: /LoginPage');
         exit;
     }
 
@@ -39,14 +39,14 @@ if (isset($_POST["submit"])) {
     // Validate password strength
     if (!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
         $_SESSION['messages'][] = ["warning", 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.'];
-        header('Location: ../LoginPage');
+        header('Location: /LoginPage');
         exit;
     }
 
     //check if email is already in use
     if (uidExists($conn, $email) !== false) {
         $_SESSION['messages'][] = ["warning", 'email used'];
-        header('Location: ../LoginPage');
+        header('Location: /LoginPage');
         exit;
     }
 
@@ -55,6 +55,6 @@ if (isset($_POST["submit"])) {
     //end database connection
     mysqli_close($conn);
 } else {
-    header("Location: ../MijnApo");
+    header("Location: /MijnApo");
     exit;
 }
