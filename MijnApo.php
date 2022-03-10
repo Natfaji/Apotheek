@@ -33,7 +33,6 @@ $page = 'MijnApo'
 		<!-- Register -->
 		<section>
 			<?php require_once $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/messages.php' ?>
-
 		</section>
 		<!-- Register -->
 		<!-- Login -->

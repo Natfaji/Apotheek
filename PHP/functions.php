@@ -95,9 +95,6 @@ function loginUser($conn, $email, $password)
 function importdata($conn)
 {
 
-    // $file = $_FILES["CSV_file"]["tmp_name"];
-    // $file_open = fopen($file, "r");
-
     $file = $_FILES["CSV_file"]["tmp_name"];
     $file_open = fopen($file, "r");
 

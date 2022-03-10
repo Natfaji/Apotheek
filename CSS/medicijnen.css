@@ -1,0 +1,29 @@
+.ProductSection {
+    display: flex;
+}
+
+.ProductSection>aside {
+    width: 20%;
+    padding: 1%;
+}
+
+.Filters_Title {
+    text-align: center;
+    background-color: white;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.hr1 {
+    height: 5px;
+    border-width: 2px;
+    size: 2px;
+}
+
+.Filter_Items {
+    display: flex;
+}
+
+.ProductsDIV {
+    width: 80%;
+}

@@ -11,7 +11,7 @@ if (!isset($_SESSION)) {
 		</li>
 		<li><a class='nav-item btn <?php if($page=='Home'){echo 'active';}?>' href='/'>Home</a></li>
 		<li><a class='nav-item btn <?php if($page=='Services'){echo 'active';}?>' href='/Services'>Services</a></li>
-		<li><a class='nav-item btn <?php if($page=='medicijnen'){echo 'active';}?>' href='/medicijnen'>medicijnen</a></li>
+		<li><a class='nav-item btn <?php if($page=='Medicijnen'){echo 'active';}?>' href='/medicijnen'>medicijnen</a></li>
 		<li><a class='nav-item btn <?php if($page=='Voorlichting'){echo 'active';}?>' href='/Voorlichting'>Voorlichting</a></li>
 		<?php if (isset($_SESSION['first_name'])) {
 			echo
