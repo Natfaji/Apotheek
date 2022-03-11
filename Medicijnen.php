@@ -33,15 +33,21 @@
                     <div class="Filters_Title">Filters</div>
                     <hr class="hr1">
                     <form action="Medicijnen.php" method="get">
-                        <div>
-                            <input type="radio" id="A-Z" name="sortingOrder" value="ASC">
-                            <label for="A-Z">A-Z</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="Z-A" name="sortingOrder" value="DESC">
-                            <label for="Z-A">Z-A</label>
-                        </div>
-                        <input type="submit" name="Filter" value="Filter">
+                        <dl>
+                            <dt>sortingOrder</dt>
+                            <br>
+                            <dd>
+                                <div>
+                                    <input type="radio" id="A-Z" name="sortingOrder" value="ASC">
+                                    <label for="A-Z">A-Z</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="Z-A" name="sortingOrder" value="DESC">
+                                    <label for="Z-A">Z-A</label>
+                                </div>
+                            </dd>
+                        </dl>
+                        <button type="submit" name="Filter"><span class="material-icons" id="btnlanguage">filter_alt</span>Filter</button>
                     </form>
                 </aside>
                 <div class="ProductsDIV">
