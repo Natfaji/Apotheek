@@ -1,5 +1,8 @@
 var slideIndex = 1;
-window.addEventListener('load', showSlides(slideIndex))
+window.addEventListener('load', function() {
+    showSlides(slideIndex);
+    // automateSlides()
+})
 
 function plusSlides(n) {
     showSlides(slideIndex += n);

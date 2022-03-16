@@ -11,6 +11,7 @@ if (!isset($_SESSION['first_name'])) {
 }
 $page = 'LoginPage'
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,12 +29,12 @@ $page = 'LoginPage'
 
 <body>
 	<header>
-		<?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Header.php' ?>
+		<?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Header.inc.php' ?>
 	</Header>
 
 	<main>
 		<section>
-			<?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/messages.php' ?>
+			<?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/messages.inc.php' ?>
 		</section>
 
 		<!-- Login -->

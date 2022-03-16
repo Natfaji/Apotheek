@@ -9,7 +9,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/functions.php';
 if (isset($_POST["submit_CSV_file"])) {
     if (isset($_SESSION["first_name"])) {
         if ($_SESSION['user_level'] === 1) {
-            importdata($conn);
+            importdata();
         } else {
             header('Location: /MijnApo');
             exit;

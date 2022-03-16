@@ -1,4 +1,5 @@
 <?php $page = 'Home' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,13 +17,13 @@
 
 <body>
 	<header>
-		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/Header.php' ?>
+		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/Header.inc.php' ?>
 	</Header>
 
 	<main>
 		<!-- Slide show -->
 		<section>
-			<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/SlideShow.php' ?>
+			<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/SlideShow.inc.php' ?>
 		</section>
 		<!-- Slide show -->
 		<!-- Nieuws -->

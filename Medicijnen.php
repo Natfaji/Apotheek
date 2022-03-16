@@ -18,12 +18,12 @@
 
 <body>
     <header>
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Header.php' ?>
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Header.inc.php' ?>
     </Header>
 
     <main>
         <section>
-            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/messages.php' ?>
+            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/messages.inc.php' ?>
         </section>
 
         <section class="page-content">
@@ -32,10 +32,9 @@
                 <aside>
                     <div class="Filters_Title">Filters</div>
                     <hr class="hr1">
-                    <form action="Medicijnen.php" method="get">
+                    <form action="medicijnen" method="get">
                         <dl>
                             <dt>sortingOrder</dt>
-                            <br>
                             <dd>
                                 <div>
                                     <input type="radio" id="A-Z" name="sortingOrder" value="ASC">
@@ -53,7 +52,7 @@
                 <div class="ProductsDIV">
                     <h2 class="ProductsdivTitle">Products</h2>
                     <div class="Product-items">
-                        <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Product.php' ?>
+                        <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Product.inc.php' ?>
                     </div>
                 </div>
             </section>

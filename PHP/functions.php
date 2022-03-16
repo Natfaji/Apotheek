@@ -4,9 +4,13 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/db_connection.php';
+
 //check if email already exist in database
-function uidExists($conn, $email)
+function uidExists($email)
 {
+    global $conn;
+
     $sql = "SELECT * FROM users WHERE email = ?;";
     $stmt = mysqli_stmt_init($conn);
 
@@ -30,8 +34,11 @@ function uidExists($conn, $email)
     mysqli_stmt_close($stmt);
 }
 
-function createuser($conn, $firstname, $infixes, $lastname, $email, $password)
+
+function createuser($firstname, $infixes, $lastname, $email, $password)
 {
+    global $conn;
+
     //send user data to database
     $sql = "INSERT INTO users VALUES ('',?,?,?,?,?,'',current_timestamp(),'')";
     $stmt = mysqli_stmt_init($conn);
@@ -53,9 +60,10 @@ function createuser($conn, $firstname, $infixes, $lastname, $email, $password)
     exit;
 }
 
-function loginUser($conn, $email, $password)
+
+function loginUser($email, $password)
 {
-    $uidExists = uidExists($conn, $email);
+    $uidExists = uidExists($email);
 
     if ($uidExists === false) {
         $_SESSION['messages'][] = ["warning", 'Wrong Email or Password!'];
@@ -92,40 +100,48 @@ function loginUser($conn, $email, $password)
     }
 }
 
-function importdata($conn)
+//Send excel file data to database
+function importdata()
 {
+    global $conn;
 
     $file = $_FILES["CSV_file"]["tmp_name"];
     $file_open = fopen($file, "r");
 
-    while (($csv = fgetcsv($file_open, 0, detectDelimiter($file))) !== false) {
-        $data[] = $csv;
-    }
-    array_shift($data);
-    foreach ($data as $fields) {
-        $medicijnen_id = $fields[0];
-        $medicijnen_name = $fields[1];
-        $medicijnen_description = $fields[2];
-        $medicijnen_price = $fields[3];
-        $medicijnen_stock = $fields[4];
-        $product_obtainability = $fields[5];
-
-        $sql = "INSERT INTO medicijnen VALUES ('',?,?,?,?,?)";
-        $stmt = mysqli_stmt_init($conn);
-
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            $_SESSION['messages'][] = ["error", 'Error unkown #002'];
-            header('Location: /LoginPage');
-            exit;
+    if ($file_open != "CSV") {
+        $_SESSION['messages'][] = ["warning", 'File type is not CSV'];
+        header('Location: /AdminPage/Products');
+        exit;
+    } else {
+        while (($csv = fgetcsv($file_open, 0, detectDelimiter($file))) !== false) {
+            $data[] = $csv;
         }
+        array_shift($data);
+        foreach ($data as $fields) {
+            $medicijnen_id = $fields[0];
+            $medicijnen_name = $fields[1];
+            $medicijnen_description = $fields[2];
+            $medicijnen_price = $fields[3];
+            $medicijnen_stock = $fields[4];
+            $product_obtainability = $fields[5];
 
-        mysqli_stmt_bind_param($stmt, "ssdii", $medicijnen_name, $medicijnen_description, $medicijnen_price, $medicijnen_stock, $product_obtainability);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
+            $sql = "INSERT INTO medicijnen VALUES ('',?,?,?,?,?)";
+            $stmt = mysqli_stmt_init($conn);
+
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+                $_SESSION['messages'][] = ["error", 'Error unkown #002'];
+                header('Location: /LoginPage');
+                exit;
+            }
+
+            mysqli_stmt_bind_param($stmt, "ssdii", $medicijnen_name, $medicijnen_description, $medicijnen_price, $medicijnen_stock, $product_obtainability);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_close($stmt);
+        }
     }
 }
 
-
+//Auto detect seperater in the excel
 function detectDelimiter($csvFile)
 {
     $delimiters = array(
@@ -143,4 +159,14 @@ function detectDelimiter($csvFile)
     }
 
     return array_search(max($delimiters), $delimiters);
+}
+
+
+function get_Products()
+{
+    global $conn;
+
+    $sql = "SELECT * FROM medicijnen ORDER BY medicijnen_id ASC";
+
+    return $results = mysqli_query($conn, $sql);
 }

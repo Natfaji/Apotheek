@@ -27,12 +27,12 @@ $page = 'Dashboard'
 
 <body>
     <header>
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Header.php' ?>
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Header.inc.php' ?>
     </Header>
 
     <main>
-        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/messages.php' ?>
-        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/SideNav.php' ?>
+        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/messages.inc.php' ?>
+        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/SideNav.inc.php' ?>
         
     </main>
 </body>

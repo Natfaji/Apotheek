@@ -1,0 +1,29 @@
+.mainSection {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.mainSection>div {
+    margin: 15px;
+}
+
+.productName {
+    font-size: 2rem;
+}
+
+.productContent {
+    display: flex;
+}
+
+.productContent>div {
+    margin: 0 15px;
+}
+
+.productImage {
+    width: 35%;
+    aspect-ratio: 1;
+}
+
+.productInfo {
+    width: 50%;
+}

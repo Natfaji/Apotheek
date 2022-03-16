@@ -26,13 +26,13 @@ $page = 'MijnApo'
 
 <body>
 	<header>
-		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/Header.php' ?>
+		<?php include $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/Header.inc.php' ?>
 	</Header>
 
 	<main>
 		<!-- Register -->
 		<section>
-			<?php require_once $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/messages.php' ?>
+			<?php require_once $_SERVER["DOCUMENT_ROOT"].'/PHP/inc/messages.inc.php' ?>
 		</section>
 		<!-- Register -->
 		<!-- Login -->

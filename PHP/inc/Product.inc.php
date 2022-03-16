@@ -28,7 +28,9 @@ while ($data = mysqli_fetch_array($results)) {
     <div class="Product">
         <div class="Product-content">
             <div class="Product-image">
-                <img src="/Assets/Images/5.jpg" alt="">
+                <a href="product?p_id=' . $data["medicijnen_id"] . '">
+                    <img src="/Assets/Images/5.jpg" alt="" href="jij">
+                </a>
             </div>
         </div>
         <div class="Product-info">

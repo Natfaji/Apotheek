@@ -25,7 +25,7 @@ if (isset($_POST["submit"])) {
     }
 
     //log user in
-    loginUser($conn, $email, $password);
+    loginUser($email, $password);
 
     //end database connection
     mysqli_close($conn);

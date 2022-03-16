@@ -16,7 +16,7 @@ if (!isset($_SESSION)) {
 		<?php if (isset($_SESSION['first_name'])) {
 			echo
 			"<li class='dropdown'>
-				<a href='/MijnApo' class='dropbtn'>Mijn APO ($_SESSION[first_name] $_SESSION[user_level])</a>
+				<a href='/MijnApo' class='dropbtn'>Mijn APO ($_SESSION[first_name])</a>
 				<div class='dropdown-content'>
 					<a href='#'>winkelwagen</a>
 					<a href='#'>bestellingen</a>

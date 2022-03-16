@@ -44,13 +44,13 @@ if (isset($_POST["submit"])) {
     }
 
     //check if email is already in use
-    if (uidExists($conn, $email) !== false) {
+    if (uidExists($email) !== false) {
         $_SESSION['messages'][] = ["warning", 'email used'];
         header('Location: /LoginPage');
         exit;
     }
 
-    createuser($conn, $firstname, $infixes, $lastname, $email, $password);
+    createuser($firstname, $infixes, $lastname, $email, $password);
 
     //end database connection
     mysqli_close($conn);

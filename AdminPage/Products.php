@@ -28,13 +28,13 @@ $page = 'Products'
 
 <body>
     <header>
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Header.php' ?>
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Header.inc.php' ?>
     </Header>
 
     <main>
-        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/SideNav.php' ?>
+        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/SideNav.inc.php' ?>
         <section class="page-content">
-            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/messages.php' ?>
+            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/messages.inc.php' ?>
             <form method="POST" action="/PHP/excelUpload.php" enctype="multipart/form-data">
                 <div>
                     <label>Upload Excel File</label>
@@ -49,7 +49,7 @@ $page = 'Products'
             <section class="ProductSection">
                 <h2 class="ProductsTitle">Products</h2>
                 <div class="Product-items">
-                    <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Product.php' ?>
+                    <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Product.inc.php' ?>
                 </div>
             </section>
             <!-- Nieuws -->
