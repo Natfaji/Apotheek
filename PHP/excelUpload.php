@@ -1,10 +1,10 @@
 <?php
 
 //start database connection
-require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/db_connection.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/db_connection.php';
 
 //connect to functions.php
-require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/functions.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/functions.php';
 
 if (isset($_POST["submit_CSV_file"])) {
     if (isset($_SESSION["first_name"])) {

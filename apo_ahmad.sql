@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2022 at 09:47 AM
+-- Generation Time: Mar 17, 2022 at 03:52 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `apotheek`
+-- Database: `apo_ahmad`
 --
 
 -- --------------------------------------------------------
@@ -114,9 +114,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `infixes`, `last_name`, `email`, `password`, `user_level`, `date_created`, `status`) VALUES
-(1, 'Ahmad', '', 'Natfaji', 'modemoon2003@hotmail.com', '$2y$10$MPiLVcdi7AXgsre8ecnWAeLfpgdA2ss5yFSdELcG4/sY63jTu0l5q', 1, '2022-02-28 10:20:49', 0),
-(2, 'Ahmad', '', 'Natfaji', 'modemoon2004@hotmail.com', '$2y$10$MgTOIispWhaixSj6KXWq3eTcu7.eI7X/UPKaQ01HsCMn7NhOPAVl6', 0, '2022-02-28 10:25:50', 0),
-(3, 'Ahmad', '', 'Natfaji', 'modemoon2005@hotmail.com', '$2y$10$2/98Flx4xN.RuckmZruuJ.V9R7N8M5jo6nbe6s7ovfWNPJssV7psG', 0, '2022-03-01 21:30:12', 0);
+(1, 'Test', '', 'Account', 'Test@account.com', '$2y$10$1QKaaBrKQf6TnQGLfWECZu66u5O2E.4Q3YKUgA4dDRYnGx3cgRf7a', 1, '2022-03-17 14:27:41', 0);
 
 --
 -- Indexes for dumped tables
@@ -148,7 +146,7 @@ ALTER TABLE `medicijnen`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

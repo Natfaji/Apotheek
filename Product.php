@@ -1,6 +1,6 @@
 <?php
 $page = 'Medicijnen';
-require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/functions.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/functions.php';
 
 $product_id = '';
 if (isset($_GET['p_id']))
@@ -36,12 +36,12 @@ if (!$results){
 
 <body>
     <header>
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/Header.inc.php' ?>
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/Header.inc.php' ?>
     </Header>
 
     <main>
         <section>
-            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/messages.inc.php' ?>
+            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
         </section>
 
         <section class="page-content">

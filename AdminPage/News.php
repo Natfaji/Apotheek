@@ -27,13 +27,14 @@ $page = 'News'
 
 <body>
     <header>
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/Header.inc.php' ?>
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/Header.inc.php' ?>
     </Header>
 
     <main>
-        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/messages.inc.php' ?>
-        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/SideNav.inc.php' ?>
-        
+        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/SideNav.inc.php' ?>
+        <section class="page-content">
+            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
+        </section>
     </main>
 </body>
 

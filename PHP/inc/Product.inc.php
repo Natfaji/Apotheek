@@ -1,7 +1,7 @@
 <?php
 
 //start database connection
-require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/db_connection.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/db_connection.php';
 
 if (isset($_GET['sortingOrder'])) {
     if ($_GET['sortingOrder'] != 'DESC') {

@@ -29,12 +29,12 @@ $page = 'LoginPage'
 
 <body>
 	<header>
-		<?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/Header.inc.php' ?>
+		<?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/Header.inc.php' ?>
 	</Header>
 
 	<main>
 		<section>
-			<?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/messages.inc.php' ?>
+			<?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
 		</section>
 
 		<!-- Login -->

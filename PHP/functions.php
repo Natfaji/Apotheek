@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/db_connection.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/db_connection.php';
 
 //check if email already exist in database
 function uidExists($email)

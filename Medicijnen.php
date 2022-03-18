@@ -23,7 +23,7 @@
 
     <main>
         <section>
-            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/messages.inc.php' ?>
+            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
         </section>
 
         <section class="page-content">
@@ -52,7 +52,7 @@
                 <div class="ProductsDIV">
                     <h2 class="ProductsdivTitle">Products</h2>
                     <div class="Product-items">
-                        <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/Product.inc.php' ?>
+                        <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/Product.inc.php' ?>
                     </div>
                 </div>
             </section>

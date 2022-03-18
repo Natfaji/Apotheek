@@ -2,10 +2,10 @@
 if (isset($_POST["submit"])) {
 
     //start database connection
-    require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/db_connection.php';
+    require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/db_connection.php';
 
     //connect to functions.php
-    require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/functions.php';
+    require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/functions.php';
 
     if (!isset($_SESSION)) {
         session_start();
