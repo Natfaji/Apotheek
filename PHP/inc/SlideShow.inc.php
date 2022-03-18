@@ -1,19 +1,19 @@
-<link rel="stylesheet" href="/CSS/SlideShow.css">
+<link rel="stylesheet" href="/apo_ahmad/CSS/SlideShow.css">
 <div class="slideshow-container">
 
     <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
-        <img class="Slide-img" src="/Assets/Images/1.jpg">
+        <img class="Slide-img" src="/apo_ahmad/Assets/Images/1.jpg">
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
-        <img class="Slide-img" src="/Assets/Images/2.jpg">
+        <img class="Slide-img" src="/apo_ahmad/Assets/Images/2.jpg">
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
-        <img class="Slide-img" src="/Assets/Images/3.jpg">
+        <img class="Slide-img" src="/apo_ahmad/Assets/Images/3.jpg">
     </div>
 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

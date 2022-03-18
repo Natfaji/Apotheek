@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/db_connection.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/db_connection.php';
 
 //check if email already exist in database
 function uidExists($email)
@@ -16,7 +16,7 @@ function uidExists($email)
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         $_SESSION['messages'][] = ["error", 'Error unkown #001'];
-        header('Location: /LoginPage');
+        header('Location: /apo_ahmad/LoginPage');
         exit;
     }
 
@@ -45,7 +45,7 @@ function createuser($firstname, $infixes, $lastname, $email, $password)
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         $_SESSION['messages'][] = ["error", 'Error unkown #002'];
-        header('Location: /LoginPage');
+        header('Location: /apo_ahmad/LoginPage');
         exit;
     }
 
@@ -56,7 +56,7 @@ function createuser($firstname, $infixes, $lastname, $email, $password)
     mysqli_stmt_close($stmt);
 
     $_SESSION['messages'][] = ["success", 'you have successfully sign up!'];
-    header('Location: /LoginPage');
+    header('Location: /apo_ahmad/LoginPage');
     exit;
 }
 
@@ -67,7 +67,7 @@ function loginUser($email, $password)
 
     if ($uidExists === false) {
         $_SESSION['messages'][] = ["warning", 'Wrong Email or Password!'];
-        header('Location: /LoginPage');
+        header('Location: /apo_ahmad/LoginPage');
         exit;
     }
 
@@ -76,7 +76,7 @@ function loginUser($email, $password)
 
     if ($checkpwd === false) {
         $_SESSION['messages'][] = ["warning", 'Wrong Email or Password!'];
-        header('Location: /LoginPage');
+        header('Location: /apo_ahmad/LoginPage');
         exit;
     } else if ($checkpwd === true) {
         $_SESSION['UId'] = $uidExists["id"];
@@ -90,11 +90,11 @@ function loginUser($email, $password)
 
         if (!$_SESSION['user_level'] == 1) {
             $_SESSION['messages'][] = ["success", 'you have successfully logged in'];
-            header('Location: /MijnApo');
+            header('Location: /apo_ahmad/MijnApo');
             exit;
         } else {
             $_SESSION['messages'][] = ["success", 'you have successfully logged in'];
-            header('Location: /AdminPage');
+            header('Location: /apo_ahmad/AdminPage');
             exit;
         }
     }
@@ -110,7 +110,7 @@ function importdata()
 
     if ($file_open != "CSV") {
         $_SESSION['messages'][] = ["warning", 'File type is not CSV'];
-        header('Location: /AdminPage/Products');
+        header('Location: /apo_ahmad/AdminPage/Products');
         exit;
     } else {
         while (($csv = fgetcsv($file_open, 0, detectDelimiter($file))) !== false) {
@@ -130,7 +130,7 @@ function importdata()
 
             if (!mysqli_stmt_prepare($stmt, $sql)) {
                 $_SESSION['messages'][] = ["error", 'Error unkown #002'];
-                header('Location: /LoginPage');
+                header('Location: /apo_ahmad/LoginPage');
                 exit;
             }
 
@@ -162,11 +162,15 @@ function detectDelimiter($csvFile)
 }
 
 
-function get_Products()
+function get_Products($product_id = '')
 {
     global $conn;
 
     $sql = "SELECT * FROM medicijnen ORDER BY medicijnen_id ASC";
+    
+    if ($product_id != '') {
+        $sql = "SELECT * FROM medicijnen WHERE medicijnen_id  = $product_id";
+    }
 
     return $results = mysqli_query($conn, $sql);
 }

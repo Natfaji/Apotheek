@@ -1,7 +1,7 @@
 <?php
 
 //start database connection
-require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/db_connection.php';
+require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/db_connection.php';
 
 if (isset($_GET['sortingOrder'])) {
     if ($_GET['sortingOrder'] != 'DESC') {
@@ -29,7 +29,7 @@ while ($data = mysqli_fetch_array($results)) {
         <div class="Product-content">
             <div class="Product-image">
                 <a href="product?p_id=' . $data["medicijnen_id"] . '">
-                    <img src="/Assets/Images/5.jpg" alt="" href="jij">
+                    <img src="/apo_ahmad/Assets/Images/5.jpg" alt="" href="jij">
                 </a>
             </div>
         </div>

@@ -1,8 +1,20 @@
 <?php
 $page = 'Medicijnen';
-require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/functions.php';
-$products = get_Products();
-$results = mysqli_fetch_assoc($products)
+require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/functions.php';
+
+$product_id = '';
+if (isset($_GET['p_id']))
+{
+    $product_id = $_GET['p_id'];
+}
+
+$products = get_Products($product_id);
+$results = mysqli_fetch_assoc($products);
+if (!$results){
+    header('Location: /apo_ahmad/PageNotFound');
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -13,23 +25,23 @@ $results = mysqli_fetch_assoc($products)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $results['medicijnen_name'] ?></title>
-    <link rel="icon" type="image/png" href="/Assets/LOGO/LOGO.png" />
+    <link rel="icon" type="image/png" href="/apo_ahmad/Assets/LOGO/LOGO.png" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/CSS/All.css">
-    <link rel="stylesheet" href="/CSS/Products.css">
-    <link rel="stylesheet" href="/CSS/Product.css">
-    <link rel="stylesheet" href="/CSS/medicijnen.css">
-    <script src="/JS/ActiveNav.js"></script>
+    <link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
+    <link rel="stylesheet" href="/apo_ahmad/CSS/Products.css">
+    <link rel="stylesheet" href="/apo_ahmad/CSS/Product.css">
+    <link rel="stylesheet" href="/apo_ahmad/CSS/medicijnen.css">
+    <script src="/apo_ahmad/JS/ActiveNav.js"></script>
 </head>
 
 <body>
     <header>
-        <?php include $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/Header.inc.php' ?>
+        <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/Header.inc.php' ?>
     </Header>
 
     <main>
         <section>
-            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/PHP/inc/messages.inc.php' ?>
+            <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad//PHP/inc/messages.inc.php' ?>
         </section>
 
         <section class="page-content">
