@@ -20,6 +20,6 @@ if (isset($_POST["submit_CSV_file"])) {
     }
 } else {
     $_SESSION['messages'][] = ["warning", 'Plase select a file to upload'];
-    header('Location: /apo_ahmad/AdminPage/Products');
+    header('Location: /apo_ahmad/AdminPage/AP_Products');
     exit;
 }

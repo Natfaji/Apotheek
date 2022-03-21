@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2022 at 03:52 PM
+-- Generation Time: Mar 21, 2022 at 12:04 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -54,15 +54,15 @@ INSERT INTO `medicijnen` (`medicijnen_id`, `medicijnen_name`, `medicijnen_descri
 (11, 'Doxycycline', '378122297', 2.09, 37, 1),
 (12, 'Metoprolol', '417221189', 2.10, 9, 1),
 (13, 'Salbutamol', '456320081', 2.11, 12, 1),
-(14, 'Medicijn 1', '495418973', 2.12, 54, 1),
-(15, 'Medicijn 2', '534517865', 2.13, 23, 1),
-(16, 'Medicijn 3', '573616757', 2.14, 56, 1),
-(17, 'Medicijn 4', '612715649', 2.15, 8, 1),
-(18, 'Medicijn 5', '651814541', 2.16, 9, 1),
-(19, 'Medicijn 6', '690913433', 2.17, 5, 1),
-(20, 'Medicijn 7', '730012325', 2.18, 21, 1),
-(21, 'Medicijn 8', '769111217', 2.19, 12, 1),
-(22, 'Medicijn 9', '808210109', 2.20, 55, 1),
+(14, 'Medicijn 01', '495418973', 2.12, 54, 1),
+(15, 'Medicijn 02', '534517865', 2.13, 23, 1),
+(16, 'Medicijn 03', '573616757', 2.14, 56, 1),
+(17, 'Medicijn 04', '612715649', 2.15, 8, 1),
+(18, 'Medicijn 05', '651814541', 2.16, 9, 1),
+(19, 'Medicijn 06', '690913433', 2.17, 5, 1),
+(20, 'Medicijn 07', '730012325', 2.18, 21, 1),
+(21, 'Medicijn 08', '769111217', 2.19, 12, 1),
+(22, 'Medicijn 09', '808210109', 2.20, 55, 1),
 (23, 'Medicijn 10', '847309001', 2.21, 43, 1),
 (24, 'Medicijn 11', '886407893', 2.22, 51, 1),
 (25, 'Medicijn 12', '925506785', 2.23, 7, 1),
@@ -90,6 +90,28 @@ INSERT INTO `medicijnen` (`medicijnen_id`, `medicijnen_name`, `medicijnen_descri
 (47, 'Medicijn 34', '1785682409', 2.45, 5, 1),
 (48, 'Medicijn 35', '1824781301', 2.46, 2, 1),
 (49, 'Medicijn 36', '1863880193', 2.47, 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `messages_id` int(11) NOT NULL,
+  `messages_name` text NOT NULL,
+  `messages_email` text NOT NULL,
+  `messages_subject` text NOT NULL,
+  `messages_message` text NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`messages_id`, `messages_name`, `messages_email`, `messages_subject`, `messages_message`, `date`) VALUES
+(1, '1', '2@2.com', '3', '4', '2022-03-21 10:27:19');
 
 -- --------------------------------------------------------
 
@@ -127,6 +149,12 @@ ALTER TABLE `medicijnen`
   ADD PRIMARY KEY (`medicijnen_id`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`messages_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -141,6 +169,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `medicijnen`
   MODIFY `medicijnen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `messages_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`

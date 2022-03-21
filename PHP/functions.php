@@ -110,7 +110,7 @@ function importdata()
 
     if ($file_open != "CSV") {
         $_SESSION['messages'][] = ["warning", 'File type is not CSV'];
-        header('Location: /apo_ahmad/AdminPage/Products');
+        header('Location: /apo_ahmad/AdminPage/AP_Products');
         exit;
     } else {
         while (($csv = fgetcsv($file_open, 0, detectDelimiter($file))) !== false) {
@@ -167,10 +167,32 @@ function get_Products($product_id = '')
     global $conn;
 
     $sql = "SELECT * FROM medicijnen ORDER BY medicijnen_id ASC";
-    
+
     if ($product_id != '') {
         $sql = "SELECT * FROM medicijnen WHERE medicijnen_id  = $product_id";
     }
 
     return $results = mysqli_query($conn, $sql);
+}
+
+function sendForm($name, $email, $Subject, $Message)
+{
+    global $conn;
+
+    $sql = "INSERT INTO messages VALUES ('',?,?,?,?,current_timestamp())";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        $_SESSION['messages'][] = ["error", 'Error unkown #002'];
+        header('Location: /apo_ahmad/Contact.php');
+        exit;
+    }
+
+    mysqli_stmt_bind_param($stmt, "ssss", $name, $email, $Subject, $Message);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    $_SESSION['messages'][] = ["success", 'your message was successfully sent!'];
+    header('Location: /apo_ahmad/Contact.php');
+    exit;
 }

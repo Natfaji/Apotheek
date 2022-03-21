@@ -4,8 +4,7 @@ if (!isset($_SESSION['first_name'])) {
 } else {
 	if ($_SESSION['user_level'] === 0) {
 		header('Location: /apo_ahmad/MijnApo');
-	}
-	else{
+	} else {
 		header('Location: /apo_ahmad/AdminPage');
 	}
 }
@@ -37,8 +36,8 @@ $page = 'LoginPage'
 			<?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
 		</section>
 
-		<!-- Login -->
 		<section id="account">
+			<!-- Login -->
 			<div id="Login">
 				<h2>Login</h2>
 				<form name="Login" action="/apo_ahmad/PHP/Login.php" method="post" required>
@@ -71,8 +70,8 @@ $page = 'LoginPage'
 				</form>
 				<p>* : Field is required!</p>
 			</div>
+			<!-- Register -->
 		</section>
-		<!-- Register -->
 	</main>
 </body>
 

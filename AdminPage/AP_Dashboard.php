@@ -7,7 +7,7 @@ if (!isset($_SESSION['first_name'])) {
         header('Location: /apo_ahmad/MijnApo');
     }
 }
-$page = 'Products'
+$page = 'AP_Dashboard'
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,6 @@ $page = 'Products'
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
     <link rel="stylesheet" href="/apo_ahmad/CSS/AdminNavigation.css">
-    <link rel="stylesheet" href="/apo_ahmad/CSS/Products.css">
     <script src="/apo_ahmad/JS/ActiveNav.js"></script>
 </head>
 
@@ -35,24 +34,6 @@ $page = 'Products'
         <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/SideNav.inc.php' ?>
         <section class="page-content">
             <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
-            <form method="POST" action="/apo_ahmad/PHP/excelUpload.php" enctype="multipart/form-data">
-                <div>
-                    <label>Upload Excel File</label>
-                    <input type="file" name="CSV_file">
-                </div>
-                <div>
-                    <button type="submit" name="submit_CSV_file">Upload</button>
-                </div>
-            </form>
-
-            <!-- Nieuws -->
-            <section class="ProductSection">
-                <h2 class="ProductsTitle">Products</h2>
-                <div class="Product-items">
-                    <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/Product.inc.php' ?>
-                </div>
-            </section>
-            <!-- Nieuws -->
         </section>
     </main>
 </body>

@@ -7,7 +7,7 @@ if (!isset($_SESSION['first_name'])) {
         header('Location: /apo_ahmad/MijnApo');
     }
 }
-$page = 'News'
+$page = 'AP_Contact'
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +22,7 @@ $page = 'News'
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
     <link rel="stylesheet" href="/apo_ahmad/CSS/AdminNavigation.css">
+    <link rel="stylesheet" href="/apo_ahmad/CSS/AP_Contact.css">
     <script src="/apo_ahmad/JS/ActiveNav.js"></script>
 </head>
 
@@ -34,6 +35,25 @@ $page = 'News'
         <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/SideNav.inc.php' ?>
         <section class="page-content">
             <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
+            <!-- Nieuws -->
+            <section class="messagesContainer">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/contact.inc.php' ?>
+                    </tbody>
+                </table>
+            </section>
+            <!-- Nieuws -->
         </section>
     </main>
 </body>
