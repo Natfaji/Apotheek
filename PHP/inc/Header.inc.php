@@ -12,7 +12,7 @@ if (!isset($_SESSION)) {
 		<li><a class='nav-item btn <?php if($page=='Home'){echo 'active';}?>' href='/apo_ahmad'>Home</a></li>
 		<li><a class='nav-item btn <?php if($page=='Services'){echo 'active';}?>' href='/apo_ahmad/Services'>Services</a></li>
 		<li><a class='nav-item btn <?php if($page=='Medicijnen'){echo 'active';}?>' href='/apo_ahmad/medicijnen'>medicijnen</a></li>
-		<li><a class='nav-item btn <?php if($page=='Voorlichting'){echo 'active';}?>' href='/apo_ahmad/Voorlichting'>Voorlichting</a></li>
+		<!-- <li><a class='nav-item btn <?php if($page=='Voorlichting'){echo 'active';}?>' href='/apo_ahmad/Voorlichting'>Voorlichting</a></li> -->
 		<li><a class='nav-item btn <?php if($page=='Contact'){echo 'active';}?>' href='/apo_ahmad/Contact'>Contact</a></li>
 		<?php if (isset($_SESSION['first_name'])) {
 			echo

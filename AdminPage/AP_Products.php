@@ -45,14 +45,14 @@ $page = 'AP_Products'
                 </div>
             </form>
 
-            <!-- Nieuws -->
+            <!-- Products Start -->
             <section class="ProductSection">
                 <h2 class="ProductsTitle">Products</h2>
                 <div class="Product-items">
                     <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/Product.inc.php' ?>
                 </div>
             </section>
-            <!-- Nieuws -->
+            <!-- Products End -->
         </section>
     </main>
 </body>

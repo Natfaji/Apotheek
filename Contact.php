@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Contact</title>
 	<link rel="icon" type="image/png" href="/apo_ahmad/Assets/LOGO/LOGO.png" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/Contact.css">
 	<script src="/apo_ahmad/JS/ActiveNav.js"></script>
@@ -26,7 +27,7 @@
 		</section>
 
 		<section class="contact">
-			<!-- Login -->
+			<!-- Contact Form Start -->
 			<div id="contact">
 				<h2>Contact</h2>
 				<form name="ContactForm" action="/apo_ahmad/PHP/Contact.php" method="post" required>
@@ -41,7 +42,7 @@
 					<input type="submit" name="submit" value="Send">
 				</form>
 			</div>
-			<!-- Login -->
+			<!-- Contact Form END -->
 		</section>
 	</main>
 </body>

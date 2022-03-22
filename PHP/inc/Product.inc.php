@@ -24,7 +24,7 @@ while ($data = mysqli_fetch_array($results)) {
         $disabledTXT = "";
     }
     echo '
-    <!--Product one -->
+    <!-- Product Start -->
     <div class="Product">
         <div class="Product-content">
             <div class="Product-image">
@@ -44,5 +44,5 @@ while ($data = mysqli_fetch_array($results)) {
         </div>
         ' . $disabledTXT . '
     </div>
-    <!--Product one -->';
+    <!-- Product End -->';
 }

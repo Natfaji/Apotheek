@@ -27,7 +27,7 @@
         </section>
 
         <section class="page-content">
-            <!-- Products -->
+            <!-- Products Start -->
             <section class="ProductSection">
                 <aside>
                     <div class="Filters_Title">Filters</div>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </section>
-            <!-- Products -->
+            <!-- Products End -->
         </section>
     </main>
 </body>

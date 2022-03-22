@@ -19,6 +19,7 @@ $page = 'MijnApo'
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Profile</title>
 	<link rel="icon" type="image/png" href="/apo_ahmad/Assets/LOGO/LOGO.png" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/MijnApo.css">
 	<script src="/apo_ahmad/JS/ActiveNav.js"></script>
@@ -30,16 +31,9 @@ $page = 'MijnApo'
 	</Header>
 
 	<main>
-		<!-- Register -->
 		<section>
 			<?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
 		</section>
-		<!-- Register -->
-		<!-- Login -->
-		<section>
-
-		</section>
-		<!-- Login -->
 	</main>
 </body>
 

@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Services</title>
 	<link rel="icon" type="image/png" href="/apo_ahmad/Assets/LOGO/LOGO.png" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/Services.css">
 	<script src="/apo_ahmad/JS/SlideShow.js"></script>
@@ -21,12 +22,12 @@
 	</Header>
 
 	<main>
-		<!-- Slide show -->
+		<!-- Slide Show Start -->
 		<section>
 			<?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/SlideShow.inc.php' ?>
 		</section>
-		<!-- Slide show -->
-		<!-- Services -->
+		<!-- Slide Show End -->
+		<!-- Service 1 Start -->
 		<section>
 			<div class="Services_1_Title">Service 1</div>
 			<div id="Services_1">
@@ -38,10 +39,10 @@
 				</div>
 			</div>
 		</section>
-		<!-- Services -->
-		<!-- Onze services -->
+		<!-- Service 1 End -->
+		<!-- Service 2 Start -->
 		<section>
-			<div class="Services_2_Title">Service 1</div>
+			<div class="Services_2_Title">Service 2</div>
 			<div id="Services_2">
 				<div class="Services_2_txt">
 
@@ -51,8 +52,8 @@
 				</div>
 			</div>
 		</section>
-		<!-- Onze services -->
-		<!-- Openingstijden -->
+		<!-- Service 2 End -->
+		<!-- Openingstijden Start -->
 		<section>
 			<div class="OpeningstijdenTitle">Openingstijden</div>
 			<div id="Openingstijden">
@@ -67,7 +68,7 @@
 				</div>
 			</div>
 		</section>
-		<!-- Openingstijden -->
+		<!-- Openingstijden End -->
 	</main>
 </body>
 

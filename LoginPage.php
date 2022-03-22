@@ -20,6 +20,7 @@ $page = 'LoginPage'
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login</title>
 	<link rel="icon" type="image/png" href="/apo_ahmad/Assets/LOGO/LOGO.png" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/LoginPage.css">
 	<script src="/apo_ahmad/JS/ActiveNav.js"></script>
@@ -37,7 +38,7 @@ $page = 'LoginPage'
 		</section>
 
 		<section id="account">
-			<!-- Login -->
+			<!-- Login Form Start -->
 			<div id="Login">
 				<h2>Login</h2>
 				<form name="Login" action="/apo_ahmad/PHP/Login.php" method="post" required>
@@ -46,8 +47,8 @@ $page = 'LoginPage'
 					<input type="submit" name="submit" value="Login">
 				</form>
 			</div>
-			<!-- Login -->
-			<!-- Register -->
+			<!-- Login Form Start -->
+			<!-- Register Form Start -->
 			<div id="SignUp">
 				<h2>Sign Up</h2>
 				<form name="Register" action="/apo_ahmad/PHP/Register.php" method="post" required>
@@ -70,7 +71,7 @@ $page = 'LoginPage'
 				</form>
 				<p>* : Field is required!</p>
 			</div>
-			<!-- Register -->
+			<!-- Register Form End -->
 		</section>
 	</main>
 </body>

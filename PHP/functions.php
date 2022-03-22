@@ -55,7 +55,7 @@ function createuser($firstname, $infixes, $lastname, $email, $password)
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
-    $_SESSION['messages'][] = ["success", 'you have successfully sign up!'];
+    $_SESSION['messages'][] = ["success", 'You have successfully sign up!'];
     header('Location: /apo_ahmad/LoginPage');
     exit;
 }
@@ -89,11 +89,11 @@ function loginUser($email, $password)
         $_SESSION['status'] = $uidExists["status"];
 
         if (!$_SESSION['user_level'] == 1) {
-            $_SESSION['messages'][] = ["success", 'you have successfully logged in'];
+            $_SESSION['messages'][] = ["success", 'You have successfully logged in'];
             header('Location: /apo_ahmad/MijnApo');
             exit;
         } else {
-            $_SESSION['messages'][] = ["success", 'you have successfully logged in'];
+            $_SESSION['messages'][] = ["success", 'You have successfully logged in'];
             header('Location: /apo_ahmad/AdminPage');
             exit;
         }
@@ -106,7 +106,13 @@ function importdata()
     global $conn;
 
     $file = $_FILES["CSV_file"]["tmp_name"];
-    $file_open = fopen($file, "r");
+    if ($file) {
+        $file_open = fopen($file, "r");
+    } else {
+        $_SESSION['messages'][] = ["warning", 'Please select file to upload'];
+        header('Location: /apo_ahmad/AdminPage/AP_Products');
+        exit;
+    }
 
     if ($file_open != "CSV") {
         $_SESSION['messages'][] = ["warning", 'File type is not CSV'];
@@ -129,7 +135,7 @@ function importdata()
             $stmt = mysqli_stmt_init($conn);
 
             if (!mysqli_stmt_prepare($stmt, $sql)) {
-                $_SESSION['messages'][] = ["error", 'Error unkown #002'];
+                $_SESSION['messages'][] = ["error", 'Error unkown #003'];
                 header('Location: /apo_ahmad/LoginPage');
                 exit;
             }
@@ -183,7 +189,7 @@ function sendForm($name, $email, $Subject, $Message)
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        $_SESSION['messages'][] = ["error", 'Error unkown #002'];
+        $_SESSION['messages'][] = ["error", 'Error unkown #004'];
         header('Location: /apo_ahmad/Contact.php');
         exit;
     }

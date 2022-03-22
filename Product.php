@@ -3,14 +3,13 @@ $page = 'Medicijnen';
 require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/functions.php';
 
 $product_id = '';
-if (isset($_GET['p_id']))
-{
+if (isset($_GET['p_id'])) {
     $product_id = $_GET['p_id'];
 }
 
 $products = get_Products($product_id);
 $results = mysqli_fetch_assoc($products);
-if (!$results){
+if (!$results) {
     header('Location: /apo_ahmad/PageNotFound');
     exit;
 }

@@ -9,6 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Home</title>
 	<link rel="icon" type="image/png" href="/apo_ahmad/Assets/LOGO/LOGO.png" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/index.css">
 	<script src="/apo_ahmad/JS/SlideShow.js"></script>
@@ -21,12 +22,12 @@
 	</Header>
 
 	<main>
-		<!-- Slide show -->
+		<!-- Slide Show Start -->
 		<section>
 			<?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/SlideShow.inc.php' ?>
 		</section>
-		<!-- Slide show -->
-		<!-- Nieuws -->
+		<!-- Slide Show End -->
+		<!-- Nieuws Start -->
 		<section>
 			<div class="NieuwsTitle">Nieuws</div>
 			<div id="Nieuws">
@@ -41,8 +42,8 @@
 				</div>
 			</div>
 		</section>
-		<!-- Nieuws -->
-		<!-- Onze services -->
+		<!-- Nieuws End -->
+		<!-- Onze services Start -->
 		<section>
 			<div class="OnzeServicesTitle">Onze Services</div>
 			<div id="OnzeServices">
@@ -57,8 +58,8 @@
 				</div>
 			</div>
 		</section>
-		<!-- Onze services -->
-		<!-- Openingstijden -->
+		<!-- Onze services End -->
+		<!-- Openingstijden Start -->
 		<section>
 			<div class="OpeningstijdenTitle">Openingstijden</div>
 			<div id="Openingstijden">
@@ -73,7 +74,7 @@
 				</div>
 			</div>
 		</section>
-		<!-- Openingstijden -->
+		<!-- Openingstijden End -->
 	</main>
 </body>
 
