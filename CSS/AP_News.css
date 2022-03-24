@@ -17,6 +17,7 @@
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
+    vertical-align: top;
 }
 
 .styled-table tbody tr {
@@ -45,4 +46,13 @@ td {
 
 .styled-table tbody td #Image {
     height: 200px;
+}
+
+.news_Id {
+    min-width: 50px;
+    max-width: 100px;
+}
+
+.news_Id_Input {
+    width: 100%;
 }

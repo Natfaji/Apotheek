@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
 <nav class="HeaderNavigation">
 	<ul id='btnContainer'>
 		<li class='LOGO_li'>
-			<a href='/'><img src='/apo_ahmad/Assets/LOGO/LOGO.png' alt='LOGO' class='LOGO'></a>
+			<a href='/apo_ahmad'><img src='/apo_ahmad/Assets/LOGO/LOGO.png' alt='LOGO' class='LOGO'></a>
 		</li>
 		<li><a class='nav-item btn <?php if($page=='Home'){echo 'active';}?>' href='/apo_ahmad'>Home</a></li>
 		<li><a class='nav-item btn <?php if($page=='Services'){echo 'active';}?>' href='/apo_ahmad/Services'>Services</a></li>

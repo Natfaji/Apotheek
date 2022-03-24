@@ -6,14 +6,35 @@
 
 #Nieuws {
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    overflow-x: scroll;
+}
+
+#Nieuws>a {
+    text-decoration: none;
+    color: black;
+    margin: 1%;
 }
 
 .Nieuws {
-    background-color: var(--background-color);
-    height: 200px;
-    flex-grow: 1;
-    margin-inline: 1%;
+    /* background-color: var(--background-color); */
+    border: 5px solid var(--background-color);
+    width: 400px;
+    aspect-ratio: 1/1.125;
+}
+
+.Nieuws img {
+    width: 100%;
+    aspect-ratio: 1/0.5;
+}
+
+.Nieuws .title {
+    margin: 15px;
+    font-size: 1.5rem;
+}
+
+.Nieuws .description {
+    margin: 15px;
 }
 
 

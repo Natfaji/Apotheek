@@ -36,10 +36,36 @@ $page = 'AP_News'
         <section class="page-content">
             <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
 
-            <form action="/apo_ahmad/PHP/    .php">
+            <form action="">
                 <label for="quantity">Number of news to show:</label>
                 <input type="number" id="quantity" name="quantity" min="1">
                 <input type="submit">
+            </form>
+            <form action="/apo_ahmad/PHP/AP_News_Upload.php" enctype="multipart/form-data" method="post">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th class="news_Id">Id</th>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Link</th>
+                            <th>Date</th>
+                            <th>Upload</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="news_Id"><input class="news_Id_Input" type="text" disabled></td><!-- News ID - Not changeable -->
+                            <td><input type="file" name="Image_File" id="Image_File"></td> <!-- News Image file to upload -->
+                            <td><input type="text" name="newsTitle" placeholder="Title"></td> <!-- required -->
+                            <td><textarea name="newsDescription" placeholder="Description" cols="30" rows="10"></textarea></td>
+                            <td><input type="text" name="newsLink" placeholder="Link"></td>
+                            <td><input type="datetime-local" name="newsDate" id="" ><span class="validity"></span></td> <!-- required -->
+                            <td><input type="submit" name="submit" value="Upload"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </form>
 
             <table class="styled-table">
@@ -54,7 +80,7 @@ $page = 'AP_News'
                     </tr>
                 </thead>
                 <tbody>
-                    <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/News.inc.php' ?>
+                    <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/AP_News.inc.php' ?>
                 </tbody>
             </table>
 

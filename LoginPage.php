@@ -41,9 +41,9 @@ $page = 'LoginPage'
 			<!-- Login Form Start -->
 			<div id="Login">
 				<h2>Login</h2>
-				<form name="Login" action="/apo_ahmad/PHP/Login.php" method="post" required>
-					<input type="email" name="email" placeholder="Email">
-					<input id="Loginpassword" type="password" name="password" placeholder="Password">
+				<form name="Login" action="/apo_ahmad/PHP/Login.php" method="post">
+					<input type="email" name="email" placeholder="Email" required>
+					<input id="Loginpassword" type="password" name="password" placeholder="Password" required>
 					<input type="submit" name="submit" value="Login">
 				</form>
 			</div>
@@ -51,12 +51,12 @@ $page = 'LoginPage'
 			<!-- Register Form Start -->
 			<div id="SignUp">
 				<h2>Sign Up</h2>
-				<form name="Register" action="/apo_ahmad/PHP/Register.php" method="post" required>
-					<input type="text" name="firstname" placeholder="firstname *">
-					<input type="text" name="infixes" placeholder="infixes">
-					<input type="text" name="lastname" placeholder="lastname *">
-					<input type="email" name="email" placeholder="Email *">
-					<input id="Registerpassword" type="password" name="password" placeholder="Password *">
+				<form name="Register" action="/apo_ahmad/PHP/Register.php" method="post">
+					<input type="text" name="firstname" placeholder="Firstname *" required>
+					<input type="text" name="infixes" placeholder="Infixes">
+					<input type="text" name="lastname" placeholder="Lastname *" required>
+					<input type="email" name="email" placeholder="Email *" required>
+					<input id="Registerpassword" type="password" name="password" placeholder="Password *" required>
 					<div>
 						<input type="checkbox" onclick="showPassword()"><label for="ShowPassword">Show Password</label>
 					</div>

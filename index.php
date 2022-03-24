@@ -31,15 +31,12 @@
 		<section>
 			<div class="NieuwsTitle">Nieuws</div>
 			<div id="Nieuws">
-				<div class="Nieuws">
+				<?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/News.inc.php' ?>
+				<a href="">
+					<div class="Nieuws">
 
-				</div>
-				<div class="Nieuws">
-
-				</div>
-				<div class="Nieuws">
-
-				</div>
+					</div>
+				</a>
 			</div>
 		</section>
 		<!-- Nieuws End -->
