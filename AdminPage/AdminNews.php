@@ -7,7 +7,7 @@ if (!isset($_SESSION['first_name'])) {
         header('Location: /apo_ahmad/MijnApo');
     }
 }
-$page = 'AP_News'
+$page = 'AdminNews'
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ $page = 'AP_News'
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
     <link rel="stylesheet" href="/apo_ahmad/CSS/AdminNavigation.css">
-    <link rel="stylesheet" href="/apo_ahmad/CSS/AP_News.css">
+    <link rel="stylesheet" href="/apo_ahmad/CSS/AdminNews.css">
     <script src="/apo_ahmad/JS/ActiveNav.js"></script>
 </head>
 
@@ -41,7 +41,7 @@ $page = 'AP_News'
                 <input type="number" id="quantity" name="quantity" min="1">
                 <input type="submit">
             </form>
-            <form action="/apo_ahmad/PHP/AP_News_Upload.php" enctype="multipart/form-data" method="post">
+            <form action="/apo_ahmad/PHP/AdminNewsUpload.php" enctype="multipart/form-data" method="post">
                 <table class="styled-table">
                     <thead>
                         <tr>
@@ -61,7 +61,7 @@ $page = 'AP_News'
                             <td><input type="text" name="newsTitle" placeholder="Title"></td> <!-- required -->
                             <td><textarea name="newsDescription" placeholder="Description" cols="30" rows="10"></textarea></td>
                             <td><input type="text" name="newsLink" placeholder="Link"></td>
-                            <td><input type="datetime-local" name="newsDate" id="" ><span class="validity"></span></td> <!-- required -->
+                            <td><input type="datetime-local" name="newsDate" id=""><span class="validity"></span></td> <!-- required -->
                             <td><input type="submit" name="submit" value="Upload"></td>
                         </tr>
                     </tbody>
@@ -77,10 +77,11 @@ $page = 'AP_News'
                         <th>Description</th>
                         <th>Link</th>
                         <th>Date</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/AP_News.inc.php' ?>
+                    <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/AdminNews.inc.php' ?>
                 </tbody>
             </table>
 

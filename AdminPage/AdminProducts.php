@@ -7,7 +7,7 @@ if (!isset($_SESSION['first_name'])) {
         header('Location: /apo_ahmad/MijnApo');
     }
 }
-$page = 'AP_Contact'
+$page = 'AdminProducts'
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ $page = 'AP_Contact'
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
     <link rel="stylesheet" href="/apo_ahmad/CSS/AdminNavigation.css">
-    <link rel="stylesheet" href="/apo_ahmad/CSS/AP_Contact.css">
+    <link rel="stylesheet" href="/apo_ahmad/CSS/Products.css">
     <script src="/apo_ahmad/JS/ActiveNav.js"></script>
 </head>
 
@@ -35,23 +35,24 @@ $page = 'AP_Contact'
         <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/SideNav.inc.php' ?>
         <section class="page-content">
             <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
-            <!-- Contact Table Start -->
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Subject</th>
-                        <th>Message</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/contact.inc.php' ?>
-                </tbody>
-            </table>
-            <!-- Contact Table End -->
+            <form method="POST" action="/apo_ahmad/PHP/excelUpload.php" enctype="multipart/form-data">
+                <div>
+                    <label>Upload Excel File</label>
+                    <input type="file" name="CSV_file">
+                </div>
+                <div>
+                    <button type="submit" name="submit_CSV_file">Upload</button>
+                </div>
+            </form>
+
+            <!-- Products Start -->
+            <section class="ProductSection">
+                <h2 class="ProductsTitle">Products</h2>
+                <div class="Product-items">
+                    <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/Product.inc.php' ?>
+                </div>
+            </section>
+            <!-- Products End -->
         </section>
     </main>
 </body>

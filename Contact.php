@@ -30,7 +30,7 @@
 			<!-- Contact Form Start -->
 			<div id="contact">
 				<h2>Contact</h2>
-				<form name="ContactForm" action="/apo_ahmad/PHP/Contact.php" method="post" required>
+				<form action="/apo_ahmad/PHP/Contact.php" method="post" required>
 					<label for="name">Name</label>
 					<input type="text" name="name" placeholder="Your full name (required)">
 					<label for="email">Email</label>

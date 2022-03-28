@@ -1,3 +1,3 @@
 <?php
-header('Location: AP_Dashboard');
+header('Location: AdminDashboard');
 exit;

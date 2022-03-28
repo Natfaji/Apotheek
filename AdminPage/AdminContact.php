@@ -7,7 +7,7 @@ if (!isset($_SESSION['first_name'])) {
         header('Location: /apo_ahmad/MijnApo');
     }
 }
-$page = 'AP_Dashboard'
+$page = 'AdminContact'
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +22,7 @@ $page = 'AP_Dashboard'
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
     <link rel="stylesheet" href="/apo_ahmad/CSS/AdminNavigation.css">
+    <link rel="stylesheet" href="/apo_ahmad/CSS/AdminContact.css">
     <script src="/apo_ahmad/JS/ActiveNav.js"></script>
 </head>
 
@@ -34,6 +35,23 @@ $page = 'AP_Dashboard'
         <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/SideNav.inc.php' ?>
         <section class="page-content">
             <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
+            <!-- Contact Table Start -->
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/contact.inc.php' ?>
+                </tbody>
+            </table>
+            <!-- Contact Table End -->
         </section>
     </main>
 </body>

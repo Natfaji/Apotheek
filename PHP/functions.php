@@ -110,13 +110,13 @@ function importdata()
         $file_open = fopen($file, "r");
     } else {
         $_SESSION['messages'][] = ["warning", 'Please select file to upload'];
-        header('Location: /apo_ahmad/AdminPage/AP_Products');
+        header('Location: /apo_ahmad/AdminPage/AdminProducts');
         exit;
     }
 
     if ($file_open != "CSV") {
         $_SESSION['messages'][] = ["warning", 'File type is not CSV'];
-        header('Location: /apo_ahmad/AdminPage/AP_Products');
+        header('Location: /apo_ahmad/AdminPage/AdminProducts');
         exit;
     } else {
         while (($csv = fgetcsv($file_open, 0, detectDelimiter($file))) !== false) {
@@ -201,4 +201,33 @@ function sendForm($name, $email, $Subject, $Message)
     $_SESSION['messages'][] = ["success", 'your message was successfully sent!'];
     header('Location: /apo_ahmad/Contact.php');
     exit;
+}
+
+function SendNews($newsImage, $newsTitle, $newsDescription, $newsLink, $newsDate)
+{
+    global $conn;
+
+    if ($newsDate) {
+        $sql = "INSERT INTO news VALUES ('',?,?,?,?,?)";
+    } else {
+        $sql = "INSERT INTO news VALUES ('',?,?,?,?,current_timestamp())";
+    }
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        $_SESSION['messages'][] = ["error", 'Error unkown #004'];
+        header('Location: /apo_ahmad/AdminPage/AdminNews');
+        exit;
+    }
+
+    if ($newsDate) {
+        mysqli_stmt_bind_param($stmt, "sssss", $newsImage, $newsTitle, $newsDescription, $newsLink, $newsDate);
+    } else {
+        mysqli_stmt_bind_param($stmt, "ssss", $newsImage, $newsTitle, $newsDescription, $newsLink);
+    }
+
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    return true;
 }

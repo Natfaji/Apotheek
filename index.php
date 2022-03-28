@@ -32,11 +32,6 @@
 			<div class="NieuwsTitle">Nieuws</div>
 			<div id="Nieuws">
 				<?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/News.inc.php' ?>
-				<a href="">
-					<div class="Nieuws">
-
-					</div>
-				</a>
 			</div>
 		</section>
 		<!-- Nieuws End -->

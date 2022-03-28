@@ -1,5 +1,5 @@
-function showPassword() {
-    var x = document.getElementById("Registerpassword")
+function showPassword(id) {
+    var x = document.getElementById(id)
     if (x.type === "password") {
         x.type = "text";
     } else {
