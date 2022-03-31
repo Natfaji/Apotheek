@@ -4,3 +4,8 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]
 
 ErrorDocument 404 /apo_ahmad/PageNotFound
+
+# Disable Directory Browsing
+Options All -Indexes
+
+ErrorDocument 403 '<meta http-equiv = "refresh" content = "0; url = /apo_ahmad" />'

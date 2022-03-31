@@ -1,9 +1,6 @@
 <?php
 if (isset($_POST["submit"])) {
 
-    //start database connection
-    require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/db_connection.php';
-
     //connect to functions.php
     require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/functions.php';
 
@@ -30,9 +27,6 @@ if (isset($_POST["submit"])) {
 
     //log user in
     sendForm($name, $email, $Subject, $Message);
-
-    //end database connection
-    mysqli_close($conn);
 } else {
     header("Location: /apo_ahmad/Contact.php");
     exit;

@@ -4,6 +4,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+//start database connection
 require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/db_connection.php';
 
 //check if email already exist in database
@@ -40,7 +41,7 @@ function createuser($firstname, $infixes, $lastname, $email, $password)
     global $conn;
 
     //send user data to database
-    $sql = "INSERT INTO users VALUES ('',?,?,?,?,?,'',current_timestamp(),'')";
+    $sql = "INSERT INTO users VALUES (NULL,?,?,?,?,?,NULL,current_timestamp(),NULL)";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -131,7 +132,7 @@ function importdata()
             $medicijnen_stock = $fields[4];
             $product_obtainability = $fields[5];
 
-            $sql = "INSERT INTO medicijnen VALUES ('',?,?,?,?,?)";
+            $sql = "INSERT INTO medicines VALUES (NULL,?,?,?,?,?)";
             $stmt = mysqli_stmt_init($conn);
 
             if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -172,10 +173,10 @@ function get_Products($product_id = '')
 {
     global $conn;
 
-    $sql = "SELECT * FROM medicijnen ORDER BY medicijnen_id ASC";
+    $sql = "SELECT * FROM medicines ORDER BY medicijnen_id ASC";
 
     if ($product_id != '') {
-        $sql = "SELECT * FROM medicijnen WHERE medicijnen_id  = $product_id";
+        $sql = "SELECT * FROM medicines WHERE medicijnen_id  = $product_id";
     }
 
     return $results = mysqli_query($conn, $sql);
@@ -185,7 +186,7 @@ function sendForm($name, $email, $Subject, $Message)
 {
     global $conn;
 
-    $sql = "INSERT INTO messages VALUES ('',?,?,?,?,current_timestamp())";
+    $sql = "INSERT INTO messages VALUES (NULL,?,?,?,?,current_timestamp())";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -208,9 +209,9 @@ function SendNews($newsImage, $newsTitle, $newsDescription, $newsLink, $newsDate
     global $conn;
 
     if ($newsDate) {
-        $sql = "INSERT INTO news VALUES ('',?,?,?,?,?)";
+        $sql = "INSERT INTO news VALUES (NULL,?,?,?,?,?)";
     } else {
-        $sql = "INSERT INTO news VALUES ('',?,?,?,?,current_timestamp())";
+        $sql = "INSERT INTO news VALUES (NULL,?,?,?,?,current_timestamp())";
     }
     $stmt = mysqli_stmt_init($conn);
 
@@ -230,4 +231,10 @@ function SendNews($newsImage, $newsTitle, $newsDescription, $newsLink, $newsDate
     mysqli_stmt_close($stmt);
 
     return true;
+}
+
+function SaveOpeningHours()
+{
+    echo "Test 123";
+    exit;
 }

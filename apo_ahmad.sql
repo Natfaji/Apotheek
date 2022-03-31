@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2022 at 12:04 PM
+-- Generation Time: Mar 29, 2022 at 02:01 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `medicijnen`
+-- Table structure for table `medicines`
 --
 
-CREATE TABLE `medicijnen` (
+CREATE TABLE `medicines` (
   `medicijnen_id` int(11) NOT NULL,
   `medicijnen_name` text NOT NULL,
   `medicijnen_description` text NOT NULL,
@@ -37,11 +37,11 @@ CREATE TABLE `medicijnen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `medicijnen`
+-- Dumping data for table `medicines`
 --
 
-INSERT INTO `medicijnen` (`medicijnen_id`, `medicijnen_name`, `medicijnen_description`, `medicijnen_price`, `medicijnen_stock`, `product_obtainability`) VALUES
-(1, 'Paracetamol 250mg', '182627837', 1.99, 1000, 1),
+INSERT INTO `medicines` (`medicijnen_id`, `medicijnen_name`, `medicijnen_description`, `medicijnen_price`, `medicijnen_stock`, `product_obtainability`) VALUES
+(1, 'Paracetamol 250mg', 'this is some good tish', 1.99, 1000, 1),
 (2, 'Aspirine', '26232269', 2.00, 250, 1),
 (3, 'Metformine', '65331161', 2.01, 90, 1),
 (4, 'Karbasalaat Ascal', '104430053', 2.02, 12, 1),
@@ -103,15 +103,41 @@ CREATE TABLE `messages` (
   `messages_email` text NOT NULL,
   `messages_subject` text NOT NULL,
   `messages_message` text NOT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp()
+  `messages_date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `messages`
 --
 
-INSERT INTO `messages` (`messages_id`, `messages_name`, `messages_email`, `messages_subject`, `messages_message`, `date`) VALUES
-(1, '1', '2@2.com', '3', '4', '2022-03-21 10:27:19');
+INSERT INTO `messages` (`messages_id`, `messages_name`, `messages_email`, `messages_subject`, `messages_message`, `messages_date`) VALUES
+(1, '1', '2@2.com', '3', '4', '2022-03-21 10:27:19'),
+(2, 'Ahmad M', 'Test123@321.nl', 'test thing', 'hello there i am here!!!', '2022-03-21 23:01:42'),
+(3, 'hellooooooooooooooooo', 'lllllllllllll@lllllllllllll.llllllllllll', 'llllllllllllllllll', 'hhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhh hhhhhhhhhhhhhh hhhhhhhheeeeeeeeeeeeeeeeee eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee eeeeeeeeeeeee eeeeeeeeeeeeeeeeeeelllllllllllllllllllllllllllllllllllllll lllllllllllllll llllllllllllllllllllll llllllllllllllllllllllll llllllll lllllllllll llllllllllllllllllllllooo oooooooooooooooooo ooooooooooo ooooooooooo ooooooooooooo oooooooooooooooooo', '2022-03-21 23:04:02'),
+(4, '111', '11@22.33', '258495', '25896541254785jjeje\r\n', '2022-03-22 12:31:40'),
+(5, 'hello', 'hello@iuhbi.wkjb', 'helooooooo', 'i am here', '2022-03-27 14:22:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `news_id` int(11) NOT NULL,
+  `news_image` text NOT NULL,
+  `news_title` text NOT NULL,
+  `news_description` text NOT NULL,
+  `news_link` text NOT NULL,
+  `news_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`news_id`, `news_image`, `news_title`, `news_description`, `news_link`, `news_date`) VALUES
+(4, 'Screenshot_(1).png', '1', '2', 'https://www.youtube.com', '2022-03-28 09:43:00');
 
 -- --------------------------------------------------------
 
@@ -136,16 +162,17 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `infixes`, `last_name`, `email`, `password`, `user_level`, `date_created`, `status`) VALUES
-(1, 'Test', '', 'Account', 'Test@account.com', '$2y$10$1QKaaBrKQf6TnQGLfWECZu66u5O2E.4Q3YKUgA4dDRYnGx3cgRf7a', 1, '2022-03-17 14:27:41', 0);
+(1, 'Test', '', 'Account', 'Test@account.com', '$2y$10$1QKaaBrKQf6TnQGLfWECZu66u5O2E.4Q3YKUgA4dDRYnGx3cgRf7a', 1, '2022-03-17 14:27:41', 0),
+(2, '1', '2', '3', '4@4.4', '$2y$10$Mlp1nmg.Hf/tgEIpw.VwwuTXLaqW/lCvA6xwQpqQaqaD9lJTKJu5q', 0, '2022-03-24 10:03:08', 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `medicijnen`
+-- Indexes for table `medicines`
 --
-ALTER TABLE `medicijnen`
+ALTER TABLE `medicines`
   ADD PRIMARY KEY (`medicijnen_id`);
 
 --
@@ -153,6 +180,12 @@ ALTER TABLE `medicijnen`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`messages_id`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`news_id`);
 
 --
 -- Indexes for table `users`
@@ -165,22 +198,28 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `medicijnen`
+-- AUTO_INCREMENT for table `medicines`
 --
-ALTER TABLE `medicijnen`
+ALTER TABLE `medicines`
   MODIFY `medicijnen_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `messages_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `messages_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

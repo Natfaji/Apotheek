@@ -24,8 +24,9 @@ while ($data = mysqli_fetch_array($results)) {
                 <td>' . $data["news_description"] . '</td>
                 <td>' . $data["news_link"] . '</td>
                 <td>' . $data["news_date"] . '</td>
-                <td><input type="submit" name="delete" value="delete"></td>
+                <td><input type="submit" name="delete" value="Delete"></td>
                 <input type="hidden" name="id" value="' . $data["news_id"] . '">
+                <input type="hidden" name="image" value="' . $data["news_image"] . '">
             </tr>
         </form>
     ';

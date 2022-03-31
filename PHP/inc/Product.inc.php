@@ -5,12 +5,12 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/db_connection.php';
 
 if (isset($_GET['sortingOrder'])) {
     if ($_GET['sortingOrder'] != 'DESC') {
-        $sql = "SELECT * FROM medicijnen ORDER BY medicijnen_name ASC";
+        $sql = "SELECT * FROM medicines ORDER BY medicijnen_name ASC";
     } else {
-        $sql = "SELECT * FROM medicijnen ORDER BY medicijnen_name DESC";
+        $sql = "SELECT * FROM medicines ORDER BY medicijnen_name DESC";
     }
 } else {
-    $sql = "SELECT * FROM medicijnen ORDER BY medicijnen_name ASC";
+    $sql = "SELECT * FROM medicines ORDER BY medicijnen_name ASC";
 }
 
 $results = mysqli_query($conn, $sql);

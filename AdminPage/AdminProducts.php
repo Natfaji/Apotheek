@@ -35,7 +35,7 @@ $page = 'AdminProducts'
         <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/SideNav.inc.php' ?>
         <section class="page-content">
             <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
-            <form method="POST" action="/apo_ahmad/PHP/excelUpload.php" enctype="multipart/form-data">
+            <form method="POST" action="/apo_ahmad/PHP/ExcelUpload.php" enctype="multipart/form-data">
                 <div>
                     <label>Upload Excel File</label>
                     <input type="file" name="CSV_file">
