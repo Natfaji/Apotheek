@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2022 at 02:01 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Apr 05, 2022 at 11:01 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -115,7 +115,8 @@ INSERT INTO `messages` (`messages_id`, `messages_name`, `messages_email`, `messa
 (2, 'Ahmad M', 'Test123@321.nl', 'test thing', 'hello there i am here!!!', '2022-03-21 23:01:42'),
 (3, 'hellooooooooooooooooo', 'lllllllllllll@lllllllllllll.llllllllllll', 'llllllllllllllllll', 'hhhhhhhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhhh hhhhhhhhhhhhhhhh hhhhhhhhhhhhhh hhhhhhhheeeeeeeeeeeeeeeeee eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee eeeeeeeeeeeee eeeeeeeeeeeeeeeeeeelllllllllllllllllllllllllllllllllllllll lllllllllllllll llllllllllllllllllllll llllllllllllllllllllllll llllllll lllllllllll llllllllllllllllllllllooo oooooooooooooooooo ooooooooooo ooooooooooo ooooooooooooo oooooooooooooooooo', '2022-03-21 23:04:02'),
 (4, '111', '11@22.33', '258495', '25896541254785jjeje\r\n', '2022-03-22 12:31:40'),
-(5, 'hello', 'hello@iuhbi.wkjb', 'helooooooo', 'i am here', '2022-03-27 14:22:24');
+(5, 'hello', 'hello@iuhbi.wkjb', 'helooooooo', 'i am here', '2022-03-27 14:22:24'),
+(6, 'Mahmod', '123@465.com', 'i kill you', 'you kill me', '2022-04-04 16:17:40');
 
 -- --------------------------------------------------------
 
@@ -137,7 +138,35 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`news_id`, `news_image`, `news_title`, `news_description`, `news_link`, `news_date`) VALUES
-(4, 'Screenshot_(1).png', '1', '2', 'https://www.youtube.com', '2022-03-28 09:43:00');
+(4, 'Screenshot_(1).png', '1', '2', 'https://www.youtube.com', '2022-03-28 09:43:00'),
+(5, 'Screenshot.png', 'i work', 'ahmad is a good worker', 'https://www.facebook.com', '2022-04-04 16:19:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `openinghours`
+--
+
+CREATE TABLE `openinghours` (
+  `openinghours_id` int(11) NOT NULL,
+  `openinghours_day` varchar(11) NOT NULL,
+  `openinghours_from` time NOT NULL,
+  `openinghours_to` time NOT NULL,
+  `openinghours_closed` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `openinghours`
+--
+
+INSERT INTO `openinghours` (`openinghours_id`, `openinghours_day`, `openinghours_from`, `openinghours_to`, `openinghours_closed`) VALUES
+(1, 'Maandag', '00:00:00', '01:00:00', 0),
+(2, 'Dinsdag', '01:00:00', '02:00:00', 0),
+(3, 'Woensdag', '02:00:00', '03:00:00', 0),
+(4, 'Donderdag', '03:00:00', '04:00:00', 0),
+(5, 'Vrijdag', '04:00:00', '05:00:00', 0),
+(6, 'Zaterdag', '05:00:00', '06:00:00', 0),
+(7, 'Zondag', '06:00:00', '07:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -188,6 +217,12 @@ ALTER TABLE `news`
   ADD PRIMARY KEY (`news_id`);
 
 --
+-- Indexes for table `openinghours`
+--
+ALTER TABLE `openinghours`
+  ADD PRIMARY KEY (`openinghours_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -207,13 +242,19 @@ ALTER TABLE `medicines`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `messages_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `messages_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `openinghours`
+--
+ALTER TABLE `openinghours`
+  MODIFY `openinghours_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`

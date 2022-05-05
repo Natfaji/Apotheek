@@ -21,10 +21,10 @@ $page = 'LoginPage'
 	<title>Login</title>
 	<link rel="icon" type="image/png" href="/apo_ahmad/Assets/LOGO/LOGO.png" />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
+	<link rel="stylesheet" href="/apo_ahmad/CSS/style.css">
 	<link rel="stylesheet" href="/apo_ahmad/CSS/LoginPage.css">
-	<script src="/apo_ahmad/JS/ActiveNav.js"></script>
 	<script src="/apo_ahmad/JS/showPassword.js"></script>
+	<script src="/apo_ahmad/JS/expand_menu.js"></script>
 </head>
 
 <body>

@@ -20,10 +20,10 @@ $page = 'AdminDashboard'
     <title>Admin Page</title>
     <link rel="icon" type="image/png" href="/apo_ahmad/Assets/LOGO/LOGO.png" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/apo_ahmad/CSS/All.css">
+    <link rel="stylesheet" href="/apo_ahmad/CSS/style.css">
     <link rel="stylesheet" href="/apo_ahmad/CSS/AdminNavigation.css">
     <link rel="stylesheet" href="/apo_ahmad/CSS/AdminDashboard.css">
-    <script src="/apo_ahmad/JS/ActiveNav.js"></script>
+    <script src="/apo_ahmad/JS/expand_menu.js"></script>
 </head>
 
 <body>
@@ -48,83 +48,7 @@ $page = 'AdminDashboard'
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Maandag</td>
-                            <td><input type="time" name="OHFMonday" id="OpeningHours"></td>
-                            <td><input type="time" name="OHTMonday" id="OpeningHours"></td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Dinsdag</td>
-                            <td><input type="time" name="OHFTuesday" id="OpeningHours"></td>
-                            <td><input type="time" name="OHTTuesday" id="OpeningHours"></td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Woensdag</td>
-                            <td><input type="time" name="OHFWednesday" id="OpeningHours"></td>
-                            <td><input type="time" name="OHTWednesday" id="OpeningHours"></td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Donderdag</td>
-                            <td><input type="time" name="OHFThursday" id="OpeningHours"></td>
-                            <td><input type="time" name="OHTThursday" id="OpeningHours"></td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Vrijdag</td>
-                            <td><input type="time" name="OHFFriday" id="OpeningHours"></td>
-                            <td><input type="time" name="OHTFriday" id="OpeningHours"></td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Zaterdag</td>
-                            <td><input type="time" name="OHFSaturday" id="OpeningHours"></td>
-                            <td><input type="time" name="OHTSaturday" id="OpeningHours"></td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Zondag</td>
-                            <td><input type="time" name="OHFSunday" id="OpeningHours"></td>
-                            <td><input type="time" name="OHTSunday" id="OpeningHours"></td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                </label>
-                            </td>
-                        </tr>
+                        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/OpeningHours.inc.php' ?>
                     </tbody>
                     <tfoot>
                         <tr>

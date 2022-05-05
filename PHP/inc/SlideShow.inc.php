@@ -3,7 +3,7 @@
 
     <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
-        <img class="Slide-img" src="/apo_ahmad/Assets/Images/1.jpg">
+        <img class="Slide-img" src="/apo_ahmad/Assets/Images/7.jpg">
     </div>
 
     <div class="mySlides fade">

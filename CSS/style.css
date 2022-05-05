@@ -1,6 +1,7 @@
 :root {
     --Nav-Text-Color: #00d96b;
     --background-color: #00d96b;
+    --background-color-dark: #00ac56;
     --dropdown-content: #00d96b;
     --color-dark-hover: #00ac56;
 }
@@ -15,7 +16,7 @@ body {
 }
 
 
-/* Rules for icon sizes Start */
+/* ICON SIZES START */
 
 .material-icons.md-18 {
     font-size: 18px;
@@ -33,20 +34,26 @@ body {
     font-size: 48px;
 }
 
-
-/* Rules for icon sizes End */
+/* ICON SIZES END */
 
 
 /* Nav Bar Start*/
 
-.HeaderNavigation {
+.headerNavigation {
     height: 80px;
     font-family: Verdana, sans-serif;
-    background-color: var(--color-1);
-    border-bottom: 10px solid var(--background-color);
+    /* background-color: var(--background-color); */
+    border-bottom: 10px solid var(--background-color-dark);
+    transition: height 0.25s ease-in-out;
+    position: relative;
 }
 
-.HeaderNavigation ul {
+.headerNavigation-open {
+    height: 350px;
+    transition: height 0.25s ease-in-out;
+}
+
+#btnContainer {
     height: 100%;
     list-style-type: none;
     margin: 0;
@@ -54,6 +61,7 @@ body {
     overflow: hidden;
     display: flex;
     align-items: center;
+    flex-direction: row;
 }
 
 .LOGO_li {
@@ -65,12 +73,11 @@ body {
     max-height: 50px;
 }
 
-.HeaderNavigation ul li {
-    float: left;
+#btnContainer li {
     padding: 10px 20px;
 }
 
-.HeaderNavigation ul li>a,
+#btnContainer li>a,
 .dropbtn {
     display: inline-block;
     color: black;
@@ -90,7 +97,7 @@ body {
     background-color: var(--Nav-Text-Color);
 }
 
-.HeaderNavigation ul li .btn:not(.active)::before {
+#btnContainer li .btn:not(.active)::before {
     content: "";
     height: 2px;
     width: 0%;
@@ -102,7 +109,7 @@ body {
     transition: width 0.25s ease-in-out;
 }
 
-.HeaderNavigation ul li .btn:not(.active):hover::before {
+#btnContainer li .btn:not(.active):hover::before {
     width: 100%;
     transition: width 0.25s ease-in-out;
 }
@@ -121,7 +128,7 @@ body {
     color: var(--Nav-Text-Color);
 }
 
-.HeaderNavigation ul li:hover,
+#btnContainer li:hover,
 .dropdown:hover .dropbtn {
     color: var(--Nav-Text-Color);
 }
@@ -157,6 +164,9 @@ body {
     display: block;
 }
 
+#expand-menu {
+    display: none;
+}
 
 /* Nav Bar End*/
 
@@ -218,3 +228,40 @@ section {
 
 
 /* Section End*/
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .LOGO_li {
+        flex-grow: 0;
+        width: 100%;
+        text-align: center;
+        height: 70px;
+        /* background-color: darkgreen; */
+    }
+
+    #btnContainer {
+        flex-direction: column;
+    }
+
+    #expand-menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}

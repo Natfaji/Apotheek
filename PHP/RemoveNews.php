@@ -15,7 +15,7 @@ $sql = "DELETE FROM news WHERE news_id = $id";
 $stmt = mysqli_stmt_init($conn);
 
 if (!mysqli_stmt_prepare($stmt, $sql)) {
-    $_SESSION['messages'][] = ["error", 'Error unkown #004'];
+    $_SESSION['messages'][] = ["error", 'Error unkown #107'];
     header('Location: /apo_ahmad/AdminPage/AdminNews');
     exit;
 }

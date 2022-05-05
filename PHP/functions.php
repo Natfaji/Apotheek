@@ -16,7 +16,7 @@ function uidExists($email)
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        $_SESSION['messages'][] = ["error", 'Error unkown #001'];
+        $_SESSION['messages'][] = ["error", 'Error unkown #101'];
         header('Location: /apo_ahmad/LoginPage');
         exit;
     }
@@ -45,7 +45,7 @@ function createuser($firstname, $infixes, $lastname, $email, $password)
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        $_SESSION['messages'][] = ["error", 'Error unkown #002'];
+        $_SESSION['messages'][] = ["error", 'Error unkown #102'];
         header('Location: /apo_ahmad/LoginPage');
         exit;
     }
@@ -68,6 +68,12 @@ function loginUser($email, $password)
 
     if ($uidExists === false) {
         $_SESSION['messages'][] = ["warning", 'Wrong Email or Password!'];
+        $_SESSION['messages'][] = ["warning", '123168541648'];
+        $_SESSION['messages'][] = ["warning", '165516535'];
+        $_SESSION['messages'][] = ["warning", '123654654'];
+        $_SESSION['messages'][] = ["warning", '1236584163'];
+        $_SESSION['messages'][] = ["warning", '1231654165'];
+        $_SESSION['messages'][] = ["warning", '1234454515'];
         header('Location: /apo_ahmad/LoginPage');
         exit;
     }
@@ -136,7 +142,7 @@ function importdata()
             $stmt = mysqli_stmt_init($conn);
 
             if (!mysqli_stmt_prepare($stmt, $sql)) {
-                $_SESSION['messages'][] = ["error", 'Error unkown #003'];
+                $_SESSION['messages'][] = ["error", 'Error unkown #103'];
                 header('Location: /apo_ahmad/LoginPage');
                 exit;
             }
@@ -190,7 +196,7 @@ function sendForm($name, $email, $Subject, $Message)
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        $_SESSION['messages'][] = ["error", 'Error unkown #004'];
+        $_SESSION['messages'][] = ["error", 'Error unkown #104'];
         header('Location: /apo_ahmad/Contact.php');
         exit;
     }
@@ -216,7 +222,7 @@ function SendNews($newsImage, $newsTitle, $newsDescription, $newsLink, $newsDate
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        $_SESSION['messages'][] = ["error", 'Error unkown #004'];
+        $_SESSION['messages'][] = ["error", 'Error unkown #105'];
         header('Location: /apo_ahmad/AdminPage/AdminNews');
         exit;
     }
@@ -233,8 +239,24 @@ function SendNews($newsImage, $newsTitle, $newsDescription, $newsLink, $newsDate
     return true;
 }
 
-function SaveOpeningHours()
+function SaveOpeningHours($array)
 {
-    echo "Test 123";
+    global $conn;
+
+    $sql = "UPDATE openinghours SET openinghours_closed = '1' WHERE openinghours.openinghours_id = 1;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        $_SESSION['messages'][] = ["error", 'Error unkown #106'];
+        header('Location: /apo_ahmad/AdminPage/AdminDashboard');
+        exit;
+    }
+
+    mysqli_stmt_bind_param($stmt, "iii",);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    $_SESSION['messages'][] = ["success", 'your opening hours were successfully saved!'];
+    header('Location: /apo_ahmad/AdminPage/AdminDashboard');
     exit;
 }

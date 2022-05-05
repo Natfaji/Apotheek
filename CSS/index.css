@@ -7,7 +7,7 @@
 #Nieuws {
     display: flex;
     /* justify-content: space-evenly; */
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 #Nieuws>a {

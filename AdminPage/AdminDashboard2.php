@@ -7,7 +7,7 @@ if (!isset($_SESSION['first_name'])) {
         header('Location: /apo_ahmad/MijnApo');
     }
 }
-$page = 'AdminProducts'
+$page = 'AdminDashboard'
 ?>
 
 <!DOCTYPE html>
@@ -17,12 +17,12 @@ $page = 'AdminProducts'
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
+    <title>Admin Page 2</title>
     <link rel="icon" type="image/png" href="/apo_ahmad/Assets/LOGO/LOGO.png" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/apo_ahmad/CSS/style.css">
     <link rel="stylesheet" href="/apo_ahmad/CSS/AdminNavigation.css">
-    <link rel="stylesheet" href="/apo_ahmad/CSS/Products.css">
+    <link rel="stylesheet" href="/apo_ahmad/CSS/AdminDashboard.css">
     <script src="/apo_ahmad/JS/expand_menu.js"></script>
 </head>
 
@@ -35,24 +35,31 @@ $page = 'AdminProducts'
         <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/SideNav.inc.php' ?>
         <section class="page-content">
             <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/messages.inc.php' ?>
-            <form method="POST" action="/apo_ahmad/PHP/ExcelUpload.php" enctype="multipart/form-data">
-                <div>
-                    <label>Upload Excel File</label>
-                    <input type="file" name="CSV_file">
-                </div>
-                <div>
-                    <button type="submit" name="submit_CSV_file">Upload</button>
-                </div>
+            <!-- -- Start -->
+            <form action="/apo_ahmad/PHP/OpeningHours2.php" method="post">
+                <h3>Openings tijden</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dag</th>
+                            <th>Van</th>
+                            <th>Tot</th>
+                            <th>Dicht</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/OpeningHours2.inc.php' ?>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                                <input type="submit" name="submit" value="Opslaan">
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
             </form>
-
-            <!-- Products Start -->
-            <section class="ProductSection">
-                <h2 class="ProductsTitle">Products</h2>
-                <div class="Product-items">
-                    <?php include $_SERVER["DOCUMENT_ROOT"] . '/apo_ahmad/PHP/inc/Product.inc.php' ?>
-                </div>
-            </section>
-            <!-- Products End -->
+            <!-- -- End -->
         </section>
     </main>
 </body>
