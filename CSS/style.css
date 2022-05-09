@@ -6,13 +6,30 @@
     --color-dark-hover: #00ac56;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     min-height: 100%;
 }
 
-* {
-    box-sizing: border-box;
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+main {
+    margin-top: 80px;
+}
+
+
+section {
+    /* margin-block: 50px; */
 }
 
 
@@ -43,14 +60,10 @@ body {
     height: 80px;
     font-family: Verdana, sans-serif;
     /* background-color: var(--background-color); */
+    background-color: white;
     border-bottom: 10px solid var(--background-color-dark);
     transition: height 0.25s ease-in-out;
     position: relative;
-}
-
-.headerNavigation-open {
-    height: 350px;
-    transition: height 0.25s ease-in-out;
 }
 
 #btnContainer {
@@ -166,6 +179,14 @@ body {
 
 #expand-menu {
     display: none;
+    border: 2px solid var(--background-color-dark);
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
 }
 
 /* Nav Bar End*/
@@ -220,16 +241,6 @@ body {
 /* Error Container End*/
 
 
-/* Section Start*/
-
-section {
-    margin-block: 50px;
-}
-
-
-/* Section End*/
-
-
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (max-width: 1200px) {}
 
@@ -238,6 +249,11 @@ section {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
+    .headerNavigation-open {
+        height: 100vh;
+        transition: height 0.25s ease-in-out;
+    }
+
     .LOGO_li {
         flex-grow: 0;
         width: 100%;
@@ -252,11 +268,6 @@ section {
 
     #expand-menu {
         display: block;
-        position: absolute;
-        right: 20px;
-        top: 15px;
-        margin: 0;
-        padding: 0;
     }
 }
 
