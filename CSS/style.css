@@ -1,54 +1,54 @@
 :root {
-    --Nav-Text-Color: #00d96b;
-    --background-color: #00d96b;
-    --background-color-dark: #00ac56;
-    --dropdown-content: #00d96b;
-    --color-dark-hover: #00ac56;
+	--Nav-Text-Color: #00d96b;
+	--background-color: #00d96b;
+	--background-color-dark: #00ac56;
+	--dropdown-content: #00d96b;
+	--color-dark-hover: #00ac56;
 }
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    min-height: 100%;
+	margin: 0;
+	min-height: 100%;
 }
 
 header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1001;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1001;
 }
 
 main {
-    margin-top: 80px;
+	margin-top: 130px;
 }
 
 
 section {
-    /* margin-block: 50px; */
+	margin-block: 50px;
 }
 
 
 /* ICON SIZES START */
 
 .material-icons.md-18 {
-    font-size: 18px;
+	font-size: 18px;
 }
 
 .material-icons.md-24 {
-    font-size: 24px;
+	font-size: 24px;
 }
 
 .material-icons.md-36 {
-    font-size: 36px;
+	font-size: 36px;
 }
 
 .material-icons.md-48 {
-    font-size: 48px;
+	font-size: 48px;
 }
 
 /* ICON SIZES END */
@@ -57,136 +57,136 @@ section {
 /* Nav Bar Start*/
 
 .headerNavigation {
-    height: 80px;
-    font-family: Verdana, sans-serif;
-    /* background-color: var(--background-color); */
-    background-color: white;
-    border-bottom: 10px solid var(--background-color-dark);
-    transition: height 0.25s ease-in-out;
-    position: relative;
+	height: 80px;
+	font-family: Verdana, sans-serif;
+	/* background-color: var(--background-color); */
+	background-color: white;
+	border-bottom: 10px solid var(--background-color-dark);
+	transition: height 0.25s ease-in-out;
+	position: relative;
 }
 
 #btnContainer {
-    height: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
+	height: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
 }
 
 .LOGO_li {
-    flex-grow: 1;
+	flex-grow: 1;
 }
 
 .LOGO {
-    max-width: 50px;
-    max-height: 50px;
+	max-width: 50px;
+	max-height: 50px;
 }
 
 #btnContainer li {
-    padding: 10px 20px;
+	padding: 10px 20px;
 }
 
 #btnContainer li>a,
 .dropbtn {
-    display: inline-block;
-    color: black;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    position: relative;
+	display: inline-block;
+	color: black;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	position: relative;
 }
 
 #btnContainer .active::before {
-    content: "";
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    background-color: var(--Nav-Text-Color);
+	content: "";
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	background-color: var(--Nav-Text-Color);
 }
 
 #btnContainer li .btn:not(.active)::before {
-    content: "";
-    height: 2px;
-    width: 0%;
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    background-color: var(--Nav-Text-Color);
-    transition: width 0.25s ease-in-out;
+	content: "";
+	height: 2px;
+	width: 0%;
+	position: absolute;
+	bottom: -3px;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	background-color: var(--Nav-Text-Color);
+	transition: width 0.25s ease-in-out;
 }
 
 #btnContainer li .btn:not(.active):hover::before {
-    width: 100%;
-    transition: width 0.25s ease-in-out;
+	width: 100%;
+	transition: width 0.25s ease-in-out;
 }
 
 #btnContainer .active::before {
-    content: "";
-    height: 2px;
-    width: 100%;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    background-color: var(--Nav-Text-Color);
+	content: "";
+	height: 2px;
+	width: 100%;
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	background-color: var(--Nav-Text-Color);
 }
 
 #btnContainer .active {
-    color: var(--Nav-Text-Color);
+	color: var(--Nav-Text-Color);
 }
 
 #btnContainer li:hover,
 .dropdown:hover .dropbtn {
-    color: var(--Nav-Text-Color);
+	color: var(--Nav-Text-Color);
 }
 
 .dropdown-content {
-    display: none;
-    border-radius: 5px;
-    position: absolute;
-    background-color: var(--dropdown-content);
-    min-width: 160px;
-    box-shadow: 5px 8px 10px 0px black;
-    margin: 10px;
-    z-index: 1;
+	display: none;
+	border-radius: 5px;
+	position: absolute;
+	background-color: var(--dropdown-content);
+	min-width: 160px;
+	box-shadow: 5px 8px 10px 0px black;
+	margin: 10px;
+	z-index: 1;
 }
 
 .dropdown-content a {
-    display: inline-block;
-    padding: 12px 16px;
-    font-size: 20px;
-    color: black;
-    text-decoration: none;
-    text-align: left;
-    position: relative;
-    width: 100%;
+	display: inline-block;
+	padding: 12px 16px;
+	font-size: 20px;
+	color: black;
+	text-decoration: none;
+	text-align: left;
+	position: relative;
+	width: 100%;
 }
 
 .dropdown-content a:hover {
-    background-color: gray;
-    color: white;
+	background-color: gray;
+	color: white;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+	display: block;
 }
 
 #expand-menu {
-    display: none;
-    border: 2px solid var(--background-color-dark);
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    margin: 0;
-    padding: 0;
-    width: 40px;
-    height: 40px;
+	display: none;
+	border: 2px solid var(--background-color-dark);
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	margin: 0;
+	padding: 0;
+	width: 40px;
+	height: 40px;
 }
 
 /* Nav Bar End*/
@@ -195,46 +195,46 @@ section {
 /* Error Container Start*/
 
 .errorContainer {
-    display: flex;
-    align-items: center;
-    margin-inline: auto;
-    margin-bottom: 25px;
-    padding: 10px;
-    width: 75%;
-    background-color: pink;
-    border-style: solid;
-    border-width: 0px 0px 0px 15px;
-    border-color: red;
+	display: flex;
+	align-items: center;
+	margin-inline: auto;
+	margin-bottom: 25px;
+	padding: 10px;
+	width: 75%;
+	background-color: pink;
+	border-style: solid;
+	border-width: 0px 0px 0px 15px;
+	border-color: red;
 }
 
 .warningContainer {
-    display: flex;
-    align-items: center;
-    margin-inline: auto;
-    margin-bottom: 25px;
-    padding: 10px;
-    width: 75%;
-    background-color: rgb(250, 123, 84);
-    border-style: solid;
-    border-width: 0px 0px 0px 15px;
-    border-color: #f0541e;
+	display: flex;
+	align-items: center;
+	margin-inline: auto;
+	margin-bottom: 25px;
+	padding: 10px;
+	width: 75%;
+	background-color: rgb(250, 123, 84);
+	border-style: solid;
+	border-width: 0px 0px 0px 15px;
+	border-color: #f0541e;
 }
 
 .successContainer {
-    display: flex;
-    align-items: center;
-    margin-inline: auto;
-    margin-bottom: 25px;
-    padding: 10px;
-    width: 75%;
-    background-color: rgb(150, 255, 150);
-    border-style: solid;
-    border-width: 0px 0px 0px 15px;
-    border-color: lime;
+	display: flex;
+	align-items: center;
+	margin-inline: auto;
+	margin-bottom: 25px;
+	padding: 10px;
+	width: 75%;
+	background-color: rgb(150, 255, 150);
+	border-style: solid;
+	border-width: 0px 0px 0px 15px;
+	border-color: lime;
 }
 
 .errorContainer svg {
-    margin-right: 10px;
+	margin-right: 10px;
 }
 
 
@@ -249,26 +249,26 @@ section {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-    .headerNavigation-open {
-        height: 100vh;
-        transition: height 0.25s ease-in-out;
-    }
+	.headerNavigation-open {
+		height: 100vh;
+		transition: height 0.25s ease-in-out;
+	}
 
-    .LOGO_li {
-        flex-grow: 0;
-        width: 100%;
-        text-align: center;
-        height: 70px;
-        /* background-color: darkgreen; */
-    }
+	.LOGO_li {
+		flex-grow: 0;
+		width: 100%;
+		text-align: center;
+		height: 70px;
+		/* background-color: darkgreen; */
+	}
 
-    #btnContainer {
-        flex-direction: column;
-    }
+	#btnContainer {
+		flex-direction: column;
+	}
 
-    #expand-menu {
-        display: block;
-    }
+	#expand-menu {
+		display: block;
+	}
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

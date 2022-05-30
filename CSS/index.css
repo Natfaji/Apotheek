@@ -25,7 +25,7 @@
 
 .Nieuws img {
     width: 100%;
-    aspect-ratio: 1/0.5;
+    aspect-ratio: 2/1;
 }
 
 .Nieuws .title {

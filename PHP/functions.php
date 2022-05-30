@@ -68,12 +68,6 @@ function loginUser($email, $password)
 
     if ($uidExists === false) {
         $_SESSION['messages'][] = ["warning", 'Wrong Email or Password!'];
-        $_SESSION['messages'][] = ["warning", '123168541648'];
-        $_SESSION['messages'][] = ["warning", '165516535'];
-        $_SESSION['messages'][] = ["warning", '123654654'];
-        $_SESSION['messages'][] = ["warning", '1236584163'];
-        $_SESSION['messages'][] = ["warning", '1231654165'];
-        $_SESSION['messages'][] = ["warning", '1234454515'];
         header('Location: /apo_ahmad/LoginPage');
         exit;
     }
