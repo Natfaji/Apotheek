@@ -4,7 +4,7 @@ html {
 
 main {
 	display: flex;
-	height: calc(100vh - 80px);
+	min-height: calc(100vh - 80px);
 }
 
 .AdminNavigation {
@@ -55,7 +55,7 @@ main {
 
 .page-content {
 	width: calc(100% - 200px);
-	height: 100%;
+	min-height: 100%;
 	padding: 15px;
 	margin: 0 0 0 0;
 	overflow-y: auto;
